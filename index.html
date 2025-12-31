@@ -29,20 +29,6 @@
 
 	<style>
 :root {
-	--color-research: #a60000;
-	--color-engineering: #00d8e6;
-	--color-business-dev: #000;
-	--color-strategy: #0060ff;
-	--color-content-dev: #ff7e00;
-	--color-marketing: #edeeb4;
-	--color-product-dev: #ea00ff;
-	--color-staffing: #00ff06;
-	--color-audience-dev: #8f0087;
-	--color-design: #ffea00;
-	--color-project-mgmt: #fff;
-	--color-it: #eaa7a2;
-	--bg-gray: #eaeaea;
-	--highlight-yellow: #fbe600;
 	--max-width: 960px;
 }
 
@@ -145,18 +131,26 @@ p {
 }
 
 a {
-	border: 0;
 	text-decoration: none;
 	color: inherit;
 }
 
-img {
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
 	border: 0;
 }
 
 .site-image {
-	width: 286px;
-	height: 82px;
+	width: 240px;
+	height: 69px;
+	border: 1px solid #313131;
 }
 
 #header {
@@ -166,7 +160,6 @@ img {
 	width: 100%;
 	height: 25px;
 	background-color: #000;
-	text-align: right;
 	z-index: 1000;
 	display: flex;
 	justify-content: flex-end;
@@ -190,7 +183,7 @@ main {
 #alpha {
 	width: 960px;
 	margin: 0 auto;
-	padding-bottom: 64px;
+	padding-bottom: 16px;
 }
 
 #logo {
@@ -219,60 +212,22 @@ main {
 }
 
 #beta {
-	background-color: var(--bg-gray);
 	padding-bottom: 30px;
-}
-
-#beta > p {
-	font-size: 30px;
-	background-color: #000;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 300;
 }
 
 .content {
 	width: 960px;
 	margin: 0 auto;
-}
-
-.bottom {
-	padding: 0 20px 10px;
-	margin: 0 0 10px;
-}
-
-.skills-grid {
-	display: block;
-	width: 960px;
-	overflow: hidden;
-}
-
-.column {
-	width: 180px;
-	float: left;
-	margin-left: 50px;
-	text-align: left;
-}
-
-.skill {
-	padding-top: 15px;
-	clear: both;
-}
-
-.small-box {
-	height: 30px;
-	width: 30px;
-	float: left;
-	margin-right: 6px;
-	border: 1px solid #000;
-}
-
-.label {
-	float: left;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 
 .clients {
 	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .client {
@@ -280,36 +235,56 @@ main {
 	justify-content: center;
 	align-items: flex-start;
 	gap: 20px;
-	margin-bottom: 0;
 }
 
 .client-image {
-	width: 286px;
 	flex-shrink: 0;
 	text-align: right;
-	margin-top: 10px;
+}
+
+.client-image a {
+	display: block;
 }
 
 .client-skills {
-	width: 456px;
 	flex-shrink: 0;
-	text-align: left;
-	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(12, 34px);
+	gap: 8px;
 }
+
+.tall-box,
+.empty-tall-box {
+	height: 69px;
+	width: 34px;
+	border: 1px solid #313131;
+	box-sizing: border-box;
+}
+
+/* Piano animation */
+.client-image,
+.tall-box,
+.empty-tall-box {
+	opacity: 0;
+	transition: opacity 150ms ease-out;
+}
+
+.client.in-view .client-image { opacity: 1; transition-delay: 0ms; }
+.client.in-view .client-skills > :nth-child(1) { opacity: 1; transition-delay: 50ms; }
+.client.in-view .client-skills > :nth-child(2) { opacity: 1; transition-delay: 100ms; }
+.client.in-view .client-skills > :nth-child(3) { opacity: 1; transition-delay: 150ms; }
+.client.in-view .client-skills > :nth-child(4) { opacity: 1; transition-delay: 200ms; }
+.client.in-view .client-skills > :nth-child(5) { opacity: 1; transition-delay: 250ms; }
+.client.in-view .client-skills > :nth-child(6) { opacity: 1; transition-delay: 300ms; }
+.client.in-view .client-skills > :nth-child(7) { opacity: 1; transition-delay: 350ms; }
+.client.in-view .client-skills > :nth-child(8) { opacity: 1; transition-delay: 400ms; }
+.client.in-view .client-skills > :nth-child(9) { opacity: 1; transition-delay: 450ms; }
+.client.in-view .client-skills > :nth-child(10) { opacity: 1; transition-delay: 500ms; }
+.client.in-view .client-skills > :nth-child(11) { opacity: 1; transition-delay: 550ms; }
+.client.in-view .client-skills > :nth-child(12) { opacity: 1; transition-delay: 600ms; }
 
 .tall-box {
-	height: 82px;
-	width: 30px;
-	float: left;
-	margin-right: 6px;
-	border: 1px solid #000;
-}
-
-.empty-tall-box {
-	height: 82px;
-	width: 32px;
-	float: left;
-	margin-right: 6px;
+	background-color: #313131;
 }
 
 #gamma {
@@ -326,28 +301,13 @@ main {
 	padding: 5px;
 }
 
-/* Color Classes */
-.color-a60000 { background-color: var(--color-research); }
-.color-00d8e6 { background-color: var(--color-engineering); }
-.color-000000 { background-color: var(--color-business-dev); }
-.color-0060ff { background-color: var(--color-strategy); }
-.color-ff7e00 { background-color: var(--color-content-dev); }
-.color-edeeb4 { background-color: var(--color-marketing); }
-.color-ea00ff { background-color: var(--color-product-dev); }
-.color-00ff06 { background-color: var(--color-staffing); }
-.color-8f0087 { background-color: var(--color-audience-dev); }
-.color-ffea00 { background-color: var(--color-design); }
-.color-ffffff { background-color: var(--color-project-mgmt); }
-.color-eaa7a2 { background-color: var(--color-it); }
-
 /* Skills Header */
 .skills-header {
 	position: sticky;
 	top: 25px;
 	z-index: 100;
-	background: var(--bg-gray);
-	padding: 15px 0;
-	border-bottom: 3px solid #000;
+	background: #fff;
+	border-bottom: 1px solid #313131;
 }
 
 .skills-header-inner {
@@ -359,40 +319,56 @@ main {
 }
 
 .skills-header-spacer {
-	width: 286px;
+	width: 240px;
 	flex-shrink: 0;
+	margin: 0;
+	font-size: 26px;
+	text-transform: uppercase;
+	text-align: right;
+	align-self: flex-end;
 }
 
 .skills-header-labels {
-	width: 456px;
 	flex-shrink: 0;
-	display: flex;
-	align-items: flex-end;
+	display: grid;
+	grid-template-columns: repeat(12, 34px);
+	gap: 8px;
+	align-items: end;
 }
 
 .skill-label {
-	width: 32px;
-	height: 90px;
-	margin-right: 6px;
+	width: 34px;
+	height: 120px;
+	margin: 0;
 	font-size: 15px;
 	font-weight: bold;
 	text-transform: uppercase;
 	white-space: nowrap;
 	position: relative;
+	border-left: 1px solid #313131;
+	border-right: 1px solid #fff;
 }
-
+.skill-label:last-of-type {
+	border-right: 1px solid #313131;
+}
 .skill-label span {
 	position: absolute;
 	bottom: 0;
-	left: 22px;
+	left: 28px;
 	transform: rotate(-90deg);
 	transform-origin: bottom left;
+	font-weight: 400;
+	letter-spacing: 2px;
+	margin-bottom: 8px;
+}
+.skill-label:last-of-type span {
+	left: 25px;
 }
 
 
 /* Responsive Adjustments */
 @media (max-width: 960px) {
-	#alpha, .content, .skills-grid {
+	#alpha, .content {
 		width: 100%;
 	}
 	.teaser p {
@@ -400,12 +376,6 @@ main {
 		margin-right: 20px;
 		font-size: 28px;
 		line-height: 1.3;
-	}
-	.column {
-		margin-left: 20px;
-		width: auto;
-		float: none;
-		display: inline-block;
 	}
 	.client {
 		flex-direction: column;
@@ -466,105 +436,109 @@ main {
 	</section>
 
 	<section id="beta">
-		<p>Skills we perform &amp; companies we work with</p>
 		<div class="clients">
 			<div class="skills-header">
 				<div class="skills-header-inner">
-					<div class="skills-header-spacer"></div>
+					<h2 class="skills-header-spacer">Clients &amp; Skills</h2>
 					<div class="skills-header-labels">
-						<div class="skill-label"><span>Research</span></div>
-						<div class="skill-label"><span>Strategy</span></div>
-						<div class="skill-label"><span>Product</span></div>
-						<div class="skill-label"><span>Design</span></div>
-						<div class="skill-label"><span>Engineer</span></div>
-						<div class="skill-label"><span>Content</span></div>
-						<div class="skill-label"><span>Staffing</span></div>
-						<div class="skill-label"><span>Project</span></div>
-						<div class="skill-label"><span>Business</span></div>
-						<div class="skill-label"><span>Marketing</span></div>
-						<div class="skill-label"><span>Audience</span></div>
-						<div class="skill-label"><span>IT</span></div>
+						<h3 class="skill-label"><span>Research</span></h3>
+						<h3 class="skill-label"><span>Strategy</span></h3>
+						<h3 class="skill-label"><span>Product</span></h3>
+						<h3 class="skill-label"><span>Design</span></h3>
+						<h3 class="skill-label"><span>Engineer</span></h3>
+						<h3 class="skill-label"><span>Content</span></h3>
+						<h3 class="skill-label"><span>Staffing</span></h3>
+						<h3 class="skill-label"><span>Project</span></h3>
+						<h3 class="skill-label"><span>Business</span></h3>
+						<h3 class="skill-label"><span>Marketing</span></h3>
+						<h3 class="skill-label"><span>Audience</span></h3>
+						<h3 class="skill-label"><span>IT</span></h3>
 					</div>
 				</div>
 			</div>
 			<div class="content">
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://andthen.chat/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-andthen.png" alt="AndThen"></a></div>
+					<h3 class="visually-hidden">AndThen</h3>
+					<div class="client-image"><a target="_blank" href="https://andthen.chat/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-andthen.png" alt="AndThen"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-snl.jpg" alt="SNL Digital"></div>
+					<h3 class="visually-hidden">SNL Digital</h3>
+					<div class="client-image"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-snl.jpg" alt="SNL Digital"></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev, Staffing, Project Mgmt, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.wework.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-wework.png" alt="WeWork"></a></div>
+					<h3 class="visually-hidden">WeWork</h3>
+					<div class="client-image"><a target="_blank" href="https://www.wework.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-wework.png" alt="WeWork"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.interviewmagazine.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-interview.png" alt="Interview Magazine"></a></div>
+					<h3 class="visually-hidden">Interview Magazine</h3>
+					<div class="client-image"><a target="_blank" href="https://www.interviewmagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-interview.png" alt="Interview Magazine"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Engineering, Business Dev, Marketing, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.medium.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-medium.png" alt="Medium"></a></div>
+					<h3 class="visually-hidden">Medium</h3>
+					<div class="client-image"><a target="_blank" href="https://www.medium.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-medium.png" alt="Medium"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -574,14 +548,15 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.buzzfeed.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-buzzfeed.jpg" alt="BuzzFeed"></a></div>
+					<h3 class="visually-hidden">BuzzFeed</h3>
+					<div class="client-image"><a target="_blank" href="https://www.buzzfeed.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-buzzfeed.jpg" alt="BuzzFeed"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -591,28 +566,30 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://rookiemag.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-rookie.jpg" alt="Rookie Magazine"></a></div>
+					<h3 class="visually-hidden">Rookie Magazine</h3>
+					<div class="client-image"><a target="_blank" href="https://rookiemag.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-rookie.jpg" alt="Rookie Magazine"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.nytimes.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-nyt.gif" alt="The New York Times"></a></div>
+					<h3 class="visually-hidden">The New York Times</h3>
+					<div class="client-image"><a target="_blank" href="https://www.nytimes.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-nyt.gif" alt="The New York Times"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Business Dev, Marketing">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -625,64 +602,68 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.ofakind.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-ofakind.jpg" alt="Of a Kind"></a></div>
+					<h3 class="visually-hidden">Of a Kind</h3>
+					<div class="client-image"><a target="_blank" href="https://www.ofakind.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-ofakind.jpg" alt="Of a Kind"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://theweek.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-theweek.jpg" alt="The Week"></a></div>
+					<h3 class="visually-hidden">The Week</h3>
+					<div class="client-image"><a target="_blank" href="https://theweek.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-theweek.jpg" alt="The Week"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://thefineprintnyc.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-the-fine-print.png" alt="The Fine Print"></a></div>
+					<h3 class="visually-hidden">The Fine Print</h3>
+					<div class="client-image"><a target="_blank" href="https://thefineprintnyc.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-the-fine-print.png" alt="The Fine Print"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.theplayerstribune.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-the-players-tribune.jpg" alt="The Players Tribune"></a></div>
+					<h3 class="visually-hidden">The Players Tribune</h3>
+					<div class="client-image"><a target="_blank" href="https://www.theplayerstribune.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-the-players-tribune.jpg" alt="The Players Tribune"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -693,97 +674,103 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.mlssoccer.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-mls.jpg" alt="MLS Soccer"></a></div>
+					<h3 class="visually-hidden">MLS Soccer</h3>
+					<div class="client-image"><a target="_blank" href="https://www.mlssoccer.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-mls.jpg" alt="MLS Soccer"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.msnbc.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-msnbc.jpg" alt="MSNBC"></a></div>
+					<h3 class="visually-hidden">MSNBC</h3>
+					<div class="client-image"><a target="_blank" href="https://www.msnbc.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-msnbc.jpg" alt="MSNBC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.ifc.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-ifc.jpg" alt="IFC"></a></div>
+					<h3 class="visually-hidden">IFC</h3>
+					<div class="client-image"><a target="_blank" href="https://www.ifc.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-ifc.jpg" alt="IFC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.howaboutwe.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-howaboutwe.jpg" alt="HowAboutWe"></a></div>
+					<h3 class="visually-hidden">HowAboutWe</h3>
+					<div class="client-image"><a target="_blank" href="https://www.howaboutwe.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-howaboutwe.jpg" alt="HowAboutWe"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.nbcolympics.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-olympics.jpg" alt="NBC Olympics"></a></div>
+					<h3 class="visually-hidden">NBC Olympics</h3>
+					<div class="client-image"><a target="_blank" href="https://www.nbcolympics.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-olympics.jpg" alt="NBC Olympics"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.flavorwire.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-flavorpill.jpg" alt="Flavorpill"></a></div>
+					<h3 class="visually-hidden">Flavorpill</h3>
+					<div class="client-image"><a target="_blank" href="https://www.flavorwire.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-flavorpill.jpg" alt="Flavorpill"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -794,101 +781,107 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.tvguidemagazine.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tvguide.jpg" alt="TV Guide"></a></div>
+					<h3 class="visually-hidden">TV Guide</h3>
+					<div class="client-image"><a target="_blank" href="https://www.tvguidemagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tvguide.jpg" alt="TV Guide"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.mediaite.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-mediaite.jpg" alt="Mediaite"></a></div>
+					<h3 class="visually-hidden">Mediaite</h3>
+					<div class="client-image"><a target="_blank" href="https://www.mediaite.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-mediaite.jpg" alt="Mediaite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.thisamericanlife.org/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tal.gif" alt="This American Life"></a></div>
+					<h3 class="visually-hidden">This American Life</h3>
+					<div class="client-image"><a target="_blank" href="https://www.thisamericanlife.org/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tal.gif" alt="This American Life"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.swooon.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-swooon.png" alt="Swooon"></a></div>
+					<h3 class="visually-hidden">Swooon</h3>
+					<div class="client-image"><a target="_blank" href="https://www.swooon.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-swooon.png" alt="Swooon"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.tvinsider.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tvinsider.png" alt="TV Insider"></a></div>
+					<h3 class="visually-hidden">TV Insider</h3>
+					<div class="client-image"><a target="_blank" href="https://www.tvinsider.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tvinsider.png" alt="TV Insider"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://skift.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-skift.jpg" alt="Skift"></a></div>
+					<h3 class="visually-hidden">Skift</h3>
+					<div class="client-image"><a target="_blank" href="https://skift.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-skift.jpg" alt="Skift"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Project Mgmt">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -896,116 +889,123 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.remindmagazine.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-remind.png" alt="Remind"></a></div>
+					<h3 class="visually-hidden">Remind</h3>
+					<div class="client-image"><a target="_blank" href="https://www.remindmagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-remind.png" alt="Remind"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Audience Dev, IT">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.tipjar.it/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tipjar.jpg" alt="TipJar"></a></div>
+					<h3 class="visually-hidden">TipJar</h3>
+					<div class="client-image"><a target="_blank" href="https://www.tipjar.it/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tipjar.jpg" alt="TipJar"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://recordsetter.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-record-setter.jpg" alt="RecordSetter"></a></div>
+					<h3 class="visually-hidden">RecordSetter</h3>
+					<div class="client-image"><a target="_blank" href="https://recordsetter.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-record-setter.jpg" alt="RecordSetter"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://milkstudios.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-milkmade.png" alt="Milk Made"></a></div>
+					<h3 class="visually-hidden">Milk Made</h3>
+					<div class="client-image"><a target="_blank" href="https://milkstudios.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-milkmade.png" alt="Milk Made"></a></div>
 					<div class="client-skills" aria-label="Services provided: Content Dev, Staffing, Project Mgmt, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.newsweek.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-newsweek.jpg" alt="Newsweek"></a></div>
+					<h3 class="visually-hidden">Newsweek</h3>
+					<div class="client-image"><a target="_blank" href="https://www.newsweek.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-newsweek.jpg" alt="Newsweek"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Engineering, Staffing, Project Mgmt, Marketing, Audience Dev">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.themarysue.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-the-mary-sue.png" alt="The Mary Sue"></a></div>
+					<h3 class="visually-hidden">The Mary Sue</h3>
+					<div class="client-image"><a target="_blank" href="https://www.themarysue.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-the-mary-sue.png" alt="The Mary Sue"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://hollywoodlife.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-hollywoodlife.png" alt="Hollywood Life"></a></div>
+					<h3 class="visually-hidden">Hollywood Life</h3>
+					<div class="client-image"><a target="_blank" href="https://hollywoodlife.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-hollywoodlife.png" alt="Hollywood Life"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1015,16 +1015,17 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://blackbookmag.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-blackbook.png" alt="Blackbook"></a></div>
+					<h3 class="visually-hidden">Blackbook</h3>
+					<div class="client-image"><a target="_blank" href="https://blackbookmag.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-blackbook.png" alt="Blackbook"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1032,44 +1033,47 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://rebooting.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-reboot.png" alt="Reboot"></a></div>
+					<h3 class="visually-hidden">Reboot</h3>
+					<div class="client-image"><a target="_blank" href="https://rebooting.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-reboot.png" alt="Reboot"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://topicstudios.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-topic.png" alt="Topic"></a></div>
+					<h3 class="visually-hidden">Topic</h3>
+					<div class="client-image"><a target="_blank" href="https://topicstudios.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-topic.png" alt="Topic"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.gq.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-gq.jpg" alt="GQ Magazine"></a></div>
+					<h3 class="visually-hidden">GQ Magazine</h3>
+					<div class="client-image"><a target="_blank" href="https://www.gq.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-gq.jpg" alt="GQ Magazine"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1083,14 +1087,15 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.thefix.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-the-fix.png" alt="TheFix"></a></div>
+					<h3 class="visually-hidden">TheFix</h3>
+					<div class="client-image"><a target="_blank" href="https://www.thefix.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-the-fix.png" alt="TheFix"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1100,75 +1105,80 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://agogo.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-agogo.jpg" alt="Agogo"></a></div>
+					<h3 class="visually-hidden">Agogo</h3>
+					<div class="client-image"><a target="_blank" href="https://agogo.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-agogo.jpg" alt="Agogo"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.zincagency.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-zinc-agency.png" alt="Zinc Agency"></a></div>
+					<h3 class="visually-hidden">Zinc Agency</h3>
+					<div class="client-image"><a target="_blank" href="https://www.zincagency.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-zinc-agency.png" alt="Zinc Agency"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://simplereach.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-simplereach.jpg" alt="SimpleReach"></a></div>
+					<h3 class="visually-hidden">SimpleReach</h3>
+					<div class="client-image"><a target="_blank" href="https://simplereach.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-simplereach.jpg" alt="SimpleReach"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Content Dev, Project Mgmt, Business Dev, Marketing">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://projectbly.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-bly.jpg" alt="Project Bly"></a></div>
+					<h3 class="visually-hidden">Project Bly</h3>
+					<div class="client-image"><a target="_blank" href="https://projectbly.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-bly.jpg" alt="Project Bly"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://b5media.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-b5.jpg" alt="B5 Media"></a></div>
+					<h3 class="visually-hidden">B5 Media</h3>
+					<div class="client-image"><a target="_blank" href="https://b5media.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-b5.jpg" alt="B5 Media"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1179,115 +1189,122 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://pose.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-pose.jpg" alt="Pose"></a></div>
+					<h3 class="visually-hidden">Pose</h3>
+					<div class="client-image"><a target="_blank" href="https://pose.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-pose.jpg" alt="Pose"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.itemize.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-itemize.png" alt="Itemize"></a></div>
+					<h3 class="visually-hidden">Itemize</h3>
+					<div class="client-image"><a target="_blank" href="https://www.itemize.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-itemize.png" alt="Itemize"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.macartiststweets.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-mac.jpg" alt="MAC Artists"></a></div>
+					<h3 class="visually-hidden">MAC Artists</h3>
+					<div class="client-image"><a target="_blank" href="https://www.macartiststweets.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-mac.jpg" alt="MAC Artists"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.tubefilter.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tubefilter.jpg" alt="Tubefilter"></a></div>
+					<h3 class="visually-hidden">Tubefilter</h3>
+					<div class="client-image"><a target="_blank" href="https://www.tubefilter.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tubefilter.jpg" alt="Tubefilter"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://tetranliving.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tetran.jpg" alt="Tetran Living"></a></div>
+					<h3 class="visually-hidden">Tetran Living</h3>
+					<div class="client-image"><a target="_blank" href="https://tetranliving.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tetran.jpg" alt="Tetran Living"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://riverjournalonline.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-riverjournal.png" alt="RiverJournal"></a></div>
+					<h3 class="visually-hidden">RiverJournal</h3>
+					<div class="client-image"><a target="_blank" href="https://riverjournalonline.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-riverjournal.png" alt="RiverJournal"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.uncram.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-uncram.jpg" alt="Uncram"></a></div>
+					<h3 class="visually-hidden">Uncram</h3>
+					<div class="client-image"><a target="_blank" href="https://www.uncram.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-uncram.jpg" alt="Uncram"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1298,115 +1315,122 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://thecampussocialite.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-campussocialite.jpg" alt="The Campus Socialite"></a></div>
+					<h3 class="visually-hidden">The Campus Socialite</h3>
+					<div class="client-image"><a target="_blank" href="https://thecampussocialite.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-campussocialite.jpg" alt="The Campus Socialite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.quickish.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-quickish.jpg" alt="Quickish"></a></div>
+					<h3 class="visually-hidden">Quickish</h3>
+					<div class="client-image"><a target="_blank" href="https://www.quickish.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-quickish.jpg" alt="Quickish"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.goviva.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-goviva.jpg" alt="GoViva"></a></div>
+					<h3 class="visually-hidden">GoViva</h3>
+					<div class="client-image"><a target="_blank" href="https://www.goviva.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-goviva.jpg" alt="GoViva"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.nearsay.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-nearsay.jpg" alt="NearSay"></a></div>
+					<h3 class="visually-hidden">NearSay</h3>
+					<div class="client-image"><a target="_blank" href="https://www.nearsay.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-nearsay.jpg" alt="NearSay"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Content Dev, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://hatchplans.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-hatch.jpg" alt="Hatch Plans"></a></div>
+					<h3 class="visually-hidden">Hatch Plans</h3>
+					<div class="client-image"><a target="_blank" href="https://hatchplans.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-hatch.jpg" alt="Hatch Plans"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://hashtag-labs.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-hashtag-labs.png" alt="Hashtag Labs"></a></div>
+					<h3 class="visually-hidden">Hashtag Labs</h3>
+					<div class="client-image"><a target="_blank" href="https://hashtag-labs.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-hashtag-labs.png" alt="Hashtag Labs"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.ericaweiner.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-erica-weiner.jpg" alt="Erica Weiner Jewelry"></a></div>
+					<h3 class="visually-hidden">Erica Weiner Jewelry</h3>
+					<div class="client-image"><a target="_blank" href="https://www.ericaweiner.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-erica-weiner.jpg" alt="Erica Weiner Jewelry"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1417,30 +1441,32 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.mogulite.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-mogulite.jpg" alt="Mogulite"></a></div>
+					<h3 class="visually-hidden">Mogulite</h3>
+					<div class="client-image"><a target="_blank" href="https://www.mogulite.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-mogulite.jpg" alt="Mogulite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.thehappycloud.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-happycloud.jpg" alt="The Happy Cloud"></a></div>
+					<h3 class="visually-hidden">The Happy Cloud</h3>
+					<div class="client-image"><a target="_blank" href="https://www.thehappycloud.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-happycloud.jpg" alt="The Happy Cloud"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1451,37 +1477,39 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://refashioner.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-refashioner.jpg" alt="Refashioner"></a></div>
+					<h3 class="visually-hidden">Refashioner</h3>
+					<div class="client-image"><a target="_blank" href="https://refashioner.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-refashioner.jpg" alt="Refashioner"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.ionstudionyc.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-ion.jpg" alt="Ion Studio NYC"></a></div>
+					<h3 class="visually-hidden">Ion Studio NYC</h3>
+					<div class="client-image"><a target="_blank" href="https://www.ionstudionyc.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-ion.jpg" alt="Ion Studio NYC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1491,7 +1519,8 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://roomorama.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-roomorama.png" alt="Roomorama"></a></div>
+					<h3 class="visually-hidden">Roomorama</h3>
+					<div class="client-image"><a target="_blank" href="https://roomorama.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-roomorama.png" alt="Roomorama"></a></div>
 					<div class="client-skills" aria-label="Services provided: Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1501,19 +1530,20 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://alifbatourguide.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-arabic-alphabet.png" alt="The Arabic Alphabet"></a></div>
+					<h3 class="visually-hidden">The Arabic Alphabet</h3>
+					<div class="client-image"><a target="_blank" href="https://alifbatourguide.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-arabic-alphabet.png" alt="The Arabic Alphabet"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1525,133 +1555,141 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.crane.tv/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-crane.jpg" alt="The Crane"></a></div>
+					<h3 class="visually-hidden">The Crane</h3>
+					<div class="client-image"><a target="_blank" href="https://www.crane.tv/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-crane.jpg" alt="The Crane"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.menshealth.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-menshealth.jpg" alt="Men's Health"></a></div>
+					<h3 class="visually-hidden">Men's Health</h3>
+					<div class="client-image"><a target="_blank" href="https://www.menshealth.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-menshealth.jpg" alt="Men's Health"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.virtualgdbk.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-vrtlguidebook.jpg" alt="Virtual Guidebook"></a></div>
+					<h3 class="visually-hidden">Virtual Guidebook</h3>
+					<div class="client-image"><a target="_blank" href="https://www.virtualgdbk.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-vrtlguidebook.jpg" alt="Virtual Guidebook"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.styleite.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-styleite.gif" alt="Styleite"></a></div>
+					<h3 class="visually-hidden">Styleite</h3>
+					<div class="client-image"><a target="_blank" href="https://www.styleite.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-styleite.gif" alt="Styleite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.geekosystem.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-geekosystem.gif" alt="Geekosystem"></a></div>
+					<h3 class="visually-hidden">Geekosystem</h3>
+					<div class="client-image"><a target="_blank" href="https://www.geekosystem.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-geekosystem.gif" alt="Geekosystem"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.sportsgrid.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-sportsgrid.gif" alt="SportsGrid"></a></div>
+					<h3 class="visually-hidden">SportsGrid</h3>
+					<div class="client-image"><a target="_blank" href="https://www.sportsgrid.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-sportsgrid.gif" alt="SportsGrid"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.gossipcop.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-gossipcop.jpg" alt="Gossip Cop"></a></div>
+					<h3 class="visually-hidden">Gossip Cop</h3>
+					<div class="client-image"><a target="_blank" href="https://www.gossipcop.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-gossipcop.jpg" alt="Gossip Cop"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, Business Dev, Marketing, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://sheetfighter.io/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-sheetfighter.png" alt="SheetFighter"></a></div>
+					<h3 class="visually-hidden">SheetFighter</h3>
+					<div class="client-image"><a target="_blank" href="https://sheetfighter.io/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-sheetfighter.png" alt="SheetFighter"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1661,41 +1699,44 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.guyism.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-guyism.jpg" alt="Guyism"></a></div>
+					<h3 class="visually-hidden">Guyism</h3>
+					<div class="client-image"><a target="_blank" href="https://www.guyism.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-guyism.jpg" alt="Guyism"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, Marketing, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.citysearch.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-citysearch.jpg" alt="Citysearch"></a></div>
+					<h3 class="visually-hidden">Citysearch</h3>
+					<div class="client-image"><a target="_blank" href="https://www.citysearch.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-citysearch.jpg" alt="Citysearch"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://soundpipe.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-soundpipe.png" alt="Soundpipe"></a></div>
+					<h3 class="visually-hidden">Soundpipe</h3>
+					<div class="client-image"><a target="_blank" href="https://soundpipe.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-soundpipe.png" alt="Soundpipe"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1706,37 +1747,39 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://viewsource.tv/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-viewsource.jpg" alt="View Source"></a></div>
+					<h3 class="visually-hidden">View Source</h3>
+					<div class="client-image"><a target="_blank" href="https://viewsource.tv/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-viewsource.jpg" alt="View Source"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
-						<span class="color-0060ff tall-box" aria-hidden="true"></span>
-						<span class="color-ea00ff tall-box" aria-hidden="true"></span>
-						<span class="color-ffea00 tall-box" aria-hidden="true"></span>
-						<span class="color-00d8e6 tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
-						<span class="color-00ff06 tall-box" aria-hidden="true"></span>
-						<span class="color-ffffff tall-box" aria-hidden="true"></span>
-						<span class="color-000000 tall-box" aria-hidden="true"></span>
-						<span class="color-edeeb4 tall-box" aria-hidden="true"></span>
-						<span class="color-8f0087 tall-box" aria-hidden="true"></span>
-						<span class="color-eaa7a2 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a target="_blank" href="https://www.wired.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-wired.jpg" alt="Wired"></a></div>
+					<h3 class="visually-hidden">Wired</h3>
+					<div class="client-image"><a target="_blank" href="https://www.wired.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-wired.jpg" alt="Wired"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Content Dev">
-						<span class="color-a60000 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="color-ff7e00 tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1760,5 +1803,20 @@ main {
 	<p>© Kinda Sorta Media, LLC.</p>
 </div>
 
+<script>
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('in-view');
+		} else {
+			entry.target.classList.remove('in-view');
+		}
+	});
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.client').forEach(client => {
+	observer.observe(client);
+});
+</script>
 </body>
 </html>
