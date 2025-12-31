@@ -114,7 +114,7 @@ body {
 	margin: 0 auto;
 	text-align: center;
 	font-family: "Gotham", "Arial Black", Gadget, Arial, Helvetica, sans-serif;
-	font-weight: 500;
+	font-weight: 400;
 	min-height: 100%;
 	color: #000;
 }
@@ -155,7 +155,7 @@ a {
 .site-image {
 	width: 240px;
 	height: 69px;
-	border: 1px solid #313131;
+	border: 1px solid #dddddd;
 }
 
 #header {
@@ -173,7 +173,6 @@ a {
 
 #header a {
 	color: #fff;
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10px;
 	font-weight: bold;
 	display: flex;
@@ -215,7 +214,9 @@ main {
 .teaser {
 	text-align: left;
 }
-
+.teaser p {
+	text-wrap: pretty;
+}
 #beta {
 	padding-bottom: 30px;
 }
@@ -262,8 +263,9 @@ main {
 .empty-tall-box {
 	height: 69px;
 	width: 34px;
-	border: 1px solid #313131;
+	border: 1px solid #dddddd;
 	box-sizing: border-box;
+	margin-left: 4px;
 }
 
 /* Piano animation */
@@ -291,7 +293,7 @@ main {
 .client.in-view .client-skills > :nth-child(14) { opacity: 1; transition-delay: 700ms; }
 
 .tall-box {
-	background-color: #313131;
+	background-color: #000000;
 }
 
 #gamma {
@@ -314,7 +316,7 @@ main {
 	top: 25px;
 	z-index: 100;
 	background: #fff;
-	border-bottom: 1px solid #313131;
+	border-bottom: 1px solid #dddddd;
 }
 
 .skills-header-inner {
@@ -352,11 +354,12 @@ main {
 	text-transform: uppercase;
 	white-space: nowrap;
 	position: relative;
-	border-left: 1px solid #313131;
+	border-left: 1px solid #dddddd;
 	border-right: 1px solid #fff;
 }
 .skill-label:last-of-type {
-	border-right: 1px solid #313131;
+	border-right: 1px solid #dddddd;
+	width: 40px;
 }
 .skill-label span {
 	position: absolute;
@@ -368,10 +371,6 @@ main {
 	letter-spacing: 2px;
 	margin-bottom: 8px;
 }
-.skill-label:last-of-type span {
-	left: 25px;
-}
-
 
 /* Responsive Adjustments */
 @media (max-width: 960px) {
@@ -412,7 +411,7 @@ main {
 		"name": "Kinda Sorta Media",
 		"alternateName": "KSM",
 		"url": "https://kindasortamedia.com",
-		"logo": "https://kindasortamedia.com/img/ksm-logo.png",
+		"logo": "https://kindasortamedia.com/img/kinda-sorta-media-logo.svg",
 		"description": "Digital consulting agency and incubator specializing in product strategy, development, and marketing.",
 		"email": "rexsorgatz@gmail.com",
 		"founder": {
@@ -425,20 +424,20 @@ main {
 </head>
 
 <body>
-<div id="header">
+<header id="header">
 	<a href="mailto:rexsorgatz@gmail.com?Subject=KSM+Info">
-		<span>CONTACT</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: block;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+		<span>CONTACT</span> <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: block;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 	</a>
-</div>
+</header>
 
 <main>
 	<section id="alpha">
 		<div id="logo">
-			<h1><img src="img/kinda-sorta-media-logo.svg" alt="Kinda Sorta Media"></h1>
+			<h1><img src="img/kinda-sorta-media-logo.svg" alt="Kinda Sorta Media" fetchpriority="high"></h1>
 		</div>
 		<div class="teaser">
 			<p>KSM is a digital consulting agency specializing in product strategy, development, and go-to-market.</p>
-			<p>Our clients include established media &amp; entertainment brands and startups who seek strategic guidance in building and launching digital projects.</p>
+			<p>Our clients include brands seeking strategic guidance in building and launching digital projects. We work with both household media / entertainment brands and early-stage startups.</p>
 		</div>
 	</section>
 
@@ -468,8 +467,8 @@ main {
 			<div class="content">
 				<article class="client">
 					<h3 class="visually-hidden">AndThen</h3>
-					<div class="client-image"><a target="_blank" href="https://andthen.chat/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-andthen.png" alt="AndThen"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://andthen.chat/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-andthen.png" alt="AndThen"></a></div>
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, Fundraising, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -488,7 +487,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">SNL Digital</h3>
-					<div class="client-image"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-snl.jpg" alt="SNL Digital"></div>
+					<div class="client-image"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-snl.jpg" alt="SNL Digital"></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev, Staffing, Project Mgmt, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -508,7 +507,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">WeWork</h3>
-					<div class="client-image"><a target="_blank" href="https://www.wework.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-wework.png" alt="WeWork"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.wework.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-wework.png" alt="WeWork"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -528,7 +527,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Interview Magazine</h3>
-					<div class="client-image"><a target="_blank" href="https://www.interviewmagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-interview.png" alt="Interview Magazine"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.interviewmagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-interview.png" alt="Interview Magazine"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Engineering, Business Dev, Marketing, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -548,7 +547,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Medium</h3>
-					<div class="client-image"><a target="_blank" href="https://www.medium.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-medium.png" alt="Medium"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.medium.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-medium.png" alt="Medium"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -568,7 +567,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">BuzzFeed</h3>
-					<div class="client-image"><a target="_blank" href="https://www.buzzfeed.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-buzzfeed.jpg" alt="BuzzFeed"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.buzzfeed.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-buzzfeed.jpg" alt="BuzzFeed"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -588,8 +587,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Rookie Magazine</h3>
-					<div class="client-image"><a target="_blank" href="https://rookiemag.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-rookie.jpg" alt="Rookie Magazine"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://rookiemag.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-rookie.jpg" alt="Rookie Magazine"></a></div>
+					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Fundraising">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -603,33 +602,13 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-					</div>
-				</article>
-				<article class="client">
-					<h3 class="visually-hidden">The New York Times</h3>
-					<div class="client-image"><a target="_blank" href="https://www.nytimes.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-nyt.gif" alt="The New York Times"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Business Dev, Marketing">
-						<span class="tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Of a Kind</h3>
-					<div class="client-image"><a target="_blank" href="https://www.ofakind.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-ofakind.jpg" alt="Of a Kind"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.ofakind.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-ofakind.jpg" alt="Of a Kind"></a></div>
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -648,7 +627,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">The Week</h3>
-					<div class="client-image"><a target="_blank" href="https://theweek.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-theweek.jpg" alt="The Week"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://theweek.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-theweek.jpg" alt="The Week"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -668,7 +647,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">The Fine Print</h3>
-					<div class="client-image"><a target="_blank" href="https://thefineprintnyc.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-the-fine-print.png" alt="The Fine Print"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://thefineprintnyc.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-the-fine-print.png" alt="The Fine Print"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -688,7 +667,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">The Players Tribune</h3>
-					<div class="client-image"><a target="_blank" href="https://www.theplayerstribune.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-the-players-tribune.jpg" alt="The Players Tribune"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.theplayerstribune.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-the-players-tribune.jpg" alt="The Players Tribune"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -708,8 +687,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">MLS Soccer</h3>
-					<div class="client-image"><a target="_blank" href="https://www.mlssoccer.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-mls.jpg" alt="MLS Soccer"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, IT">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.mlssoccer.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-mls.jpg" alt="MLS Soccer"></a></div>
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -728,7 +707,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">MSNBC</h3>
-					<div class="client-image"><a target="_blank" href="https://www.msnbc.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-msnbc.jpg" alt="MSNBC"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.msnbc.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-msnbc.jpg" alt="MSNBC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -747,8 +726,28 @@ main {
 					</div>
 				</article>
 				<article class="client">
+					<h3 class="visually-hidden">The New York Times</h3>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.nytimes.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-nyt.gif" alt="The New York Times"></a></div>
+					<div class="client-skills" aria-label="Services provided: Research, Product Dev">
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+					</div>
+				</article>
+				<article class="client">
 					<h3 class="visually-hidden">IFC</h3>
-					<div class="client-image"><a target="_blank" href="https://www.ifc.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-ifc.jpg" alt="IFC"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.ifc.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-ifc.jpg" alt="IFC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -768,7 +767,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">HowAboutWe</h3>
-					<div class="client-image"><a target="_blank" href="https://www.howaboutwe.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-howaboutwe.jpg" alt="HowAboutWe"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.howaboutwe.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-howaboutwe.jpg" alt="HowAboutWe"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -788,7 +787,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">NBC Olympics</h3>
-					<div class="client-image"><a target="_blank" href="https://www.nbcolympics.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-olympics.jpg" alt="NBC Olympics"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.nbcolympics.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-olympics.jpg" alt="NBC Olympics"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -808,7 +807,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Flavorpill</h3>
-					<div class="client-image"><a target="_blank" href="https://www.flavorwire.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-flavorpill.jpg" alt="Flavorpill"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.flavorwire.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-flavorpill.jpg" alt="Flavorpill"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -828,7 +827,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">TV Guide</h3>
-					<div class="client-image"><a target="_blank" href="https://www.tvguidemagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tvguide.jpg" alt="TV Guide"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.tvguidemagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-tvguide.jpg" alt="TV Guide"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -848,7 +847,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Mediaite</h3>
-					<div class="client-image"><a target="_blank" href="https://www.mediaite.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-mediaite.jpg" alt="Mediaite"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.mediaite.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-mediaite.jpg" alt="Mediaite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -868,7 +867,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">This American Life</h3>
-					<div class="client-image"><a target="_blank" href="https://www.thisamericanlife.org/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tal.gif" alt="This American Life"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.thisamericanlife.org/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-tal.gif" alt="This American Life"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -888,7 +887,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Swooon</h3>
-					<div class="client-image"><a target="_blank" href="https://www.swooon.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-swooon.png" alt="Swooon"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.swooon.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-swooon.png" alt="Swooon"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -908,7 +907,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">TV Insider</h3>
-					<div class="client-image"><a target="_blank" href="https://www.tvinsider.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tvinsider.png" alt="TV Insider"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.tvinsider.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-tvinsider.png" alt="TV Insider"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -928,7 +927,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Skift</h3>
-					<div class="client-image"><a target="_blank" href="https://skift.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-skift.jpg" alt="Skift"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://skift.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-skift.jpg" alt="Skift"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Project Mgmt">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -948,7 +947,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Remind</h3>
-					<div class="client-image"><a target="_blank" href="https://www.remindmagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-remind.png" alt="Remind"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.remindmagazine.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-remind.png" alt="Remind"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Audience Dev, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -968,8 +967,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">TipJar</h3>
-					<div class="client-image"><a target="_blank" href="https://www.tipjar.it/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tipjar.jpg" alt="TipJar"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.tipjar.it/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-tipjar.jpg" alt="TipJar"></a></div>
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Fundraising">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -988,8 +987,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">RecordSetter</h3>
-					<div class="client-image"><a target="_blank" href="https://recordsetter.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-record-setter.jpg" alt="RecordSetter"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Business Dev, Marketing, Press">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://recordsetter.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-record-setter.jpg" alt="RecordSetter"></a></div>
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Business Dev, Marketing, Press, Fundraising">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1008,7 +1007,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Milk Made</h3>
-					<div class="client-image"><a target="_blank" href="https://milkstudios.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-milkmade.png" alt="Milk Made"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://milkstudios.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-milkmade.png" alt="Milk Made"></a></div>
 					<div class="client-skills" aria-label="Services provided: Content Dev, Staffing, Project Mgmt, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1028,7 +1027,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Newsweek</h3>
-					<div class="client-image"><a target="_blank" href="https://www.newsweek.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-newsweek.jpg" alt="Newsweek"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.newsweek.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-newsweek.jpg" alt="Newsweek"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Engineering, Staffing, Project Mgmt, Marketing, Audience Dev">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1048,7 +1047,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">The Mary Sue</h3>
-					<div class="client-image"><a target="_blank" href="https://www.themarysue.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-the-mary-sue.png" alt="The Mary Sue"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.themarysue.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-the-mary-sue.png" alt="The Mary Sue"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1068,7 +1067,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Hollywood Life</h3>
-					<div class="client-image"><a target="_blank" href="https://hollywoodlife.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-hollywoodlife.png" alt="Hollywood Life"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://hollywoodlife.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-hollywoodlife.png" alt="Hollywood Life"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1088,7 +1087,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Blackbook</h3>
-					<div class="client-image"><a target="_blank" href="https://blackbookmag.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-blackbook.png" alt="Blackbook"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://blackbookmag.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-blackbook.png" alt="Blackbook"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1108,7 +1107,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Reboot</h3>
-					<div class="client-image"><a target="_blank" href="https://rebooting.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-reboot.png" alt="Reboot"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://rebooting.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-reboot.png" alt="Reboot"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1128,7 +1127,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Topic</h3>
-					<div class="client-image"><a target="_blank" href="https://topicstudios.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-topic.png" alt="Topic"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://topicstudios.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-topic.png" alt="Topic"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1148,7 +1147,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">GQ Magazine</h3>
-					<div class="client-image"><a target="_blank" href="https://www.gq.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-gq.jpg" alt="GQ Magazine"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.gq.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-gq.jpg" alt="GQ Magazine"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1168,7 +1167,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">TheFix</h3>
-					<div class="client-image"><a target="_blank" href="https://www.thefix.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-the-fix.png" alt="TheFix"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.thefix.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-the-fix.png" alt="TheFix"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1188,8 +1187,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Agogo</h3>
-					<div class="client-image"><a target="_blank" href="https://agogo.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-agogo.jpg" alt="Agogo"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://agogo.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-agogo.jpg" alt="Agogo"></a></div>
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, Fundraising">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1208,7 +1207,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Zinc Agency</h3>
-					<div class="client-image"><a target="_blank" href="https://www.zincagency.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-zinc-agency.png" alt="Zinc Agency"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.zincagency.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-zinc-agency.png" alt="Zinc Agency"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1228,7 +1227,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">SimpleReach</h3>
-					<div class="client-image"><a target="_blank" href="https://simplereach.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-simplereach.jpg" alt="SimpleReach"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://simplereach.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-simplereach.jpg" alt="SimpleReach"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Content Dev, Project Mgmt, Business Dev, Marketing">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1248,7 +1247,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Project Bly</h3>
-					<div class="client-image"><a target="_blank" href="https://projectbly.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-bly.jpg" alt="Project Bly"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://projectbly.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-bly.jpg" alt="Project Bly"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing, Press">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1268,7 +1267,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">B5 Media</h3>
-					<div class="client-image"><a target="_blank" href="https://b5media.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-b5.jpg" alt="B5 Media"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://b5media.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-b5.jpg" alt="B5 Media"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1288,7 +1287,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Pose</h3>
-					<div class="client-image"><a target="_blank" href="https://pose.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-pose.jpg" alt="Pose"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://pose.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-pose.jpg" alt="Pose"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1308,7 +1307,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Itemize</h3>
-					<div class="client-image"><a target="_blank" href="https://www.itemize.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-itemize.png" alt="Itemize"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.itemize.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-itemize.png" alt="Itemize"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Business Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1328,7 +1327,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">MAC Artists</h3>
-					<div class="client-image"><a target="_blank" href="https://www.macartiststweets.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-mac.jpg" alt="MAC Artists"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.macartiststweets.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-mac.jpg" alt="MAC Artists"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1348,7 +1347,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Tubefilter</h3>
-					<div class="client-image"><a target="_blank" href="https://www.tubefilter.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tubefilter.jpg" alt="Tubefilter"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.tubefilter.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-tubefilter.jpg" alt="Tubefilter"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1368,8 +1367,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Tetran Living</h3>
-					<div class="client-image"><a target="_blank" href="https://tetranliving.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tetran.jpg" alt="Tetran Living"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://tetranliving.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-tetran.jpg" alt="Tetran Living"></a></div>
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev, Fundraising">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1388,7 +1387,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">RiverJournal</h3>
-					<div class="client-image"><a target="_blank" href="https://riverjournalonline.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-riverjournal.png" alt="RiverJournal"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://riverjournalonline.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-riverjournal.png" alt="RiverJournal"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1408,7 +1407,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Uncram</h3>
-					<div class="client-image"><a target="_blank" href="https://www.uncram.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-uncram.jpg" alt="Uncram"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.uncram.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-uncram.jpg" alt="Uncram"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1428,7 +1427,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">The Campus Socialite</h3>
-					<div class="client-image"><a target="_blank" href="https://thecampussocialite.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-campussocialite.jpg" alt="The Campus Socialite"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://thecampussocialite.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-campussocialite.jpg" alt="The Campus Socialite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1448,7 +1447,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Quickish</h3>
-					<div class="client-image"><a target="_blank" href="https://www.quickish.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-quickish.jpg" alt="Quickish"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.quickish.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-quickish.jpg" alt="Quickish"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1468,7 +1467,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">GoViva</h3>
-					<div class="client-image"><a target="_blank" href="https://www.goviva.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-goviva.jpg" alt="GoViva"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.goviva.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-goviva.jpg" alt="GoViva"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1488,8 +1487,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">NearSay</h3>
-					<div class="client-image"><a target="_blank" href="https://www.nearsay.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-nearsay.jpg" alt="NearSay"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Content Dev, Business Dev, Marketing, Press">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.nearsay.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-nearsay.jpg" alt="NearSay"></a></div>
+					<div class="client-skills" aria-label="Services provided: Strategy, Content Dev, Business Dev, Marketing, Press, Fundraising">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1508,8 +1507,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Hatch Plans</h3>
-					<div class="client-image"><a target="_blank" href="https://hatchplans.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-hatch.jpg" alt="Hatch Plans"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing, Press, Audience Dev">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://hatchplans.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-hatch.jpg" alt="Hatch Plans"></a></div>
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing, Press, Audience Dev, Fundraising">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1528,7 +1527,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Hashtag Labs</h3>
-					<div class="client-image"><a target="_blank" href="https://hashtag-labs.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-hashtag-labs.png" alt="Hashtag Labs"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://hashtag-labs.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-hashtag-labs.png" alt="Hashtag Labs"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1548,7 +1547,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Erica Weiner Jewelry</h3>
-					<div class="client-image"><a target="_blank" href="https://www.ericaweiner.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-erica-weiner.jpg" alt="Erica Weiner Jewelry"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.ericaweiner.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-erica-weiner.jpg" alt="Erica Weiner Jewelry"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1568,7 +1567,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Mogulite</h3>
-					<div class="client-image"><a target="_blank" href="https://www.mogulite.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-mogulite.jpg" alt="Mogulite"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.mogulite.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-mogulite.jpg" alt="Mogulite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1588,7 +1587,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">The Happy Cloud</h3>
-					<div class="client-image"><a target="_blank" href="https://www.thehappycloud.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-happycloud.jpg" alt="The Happy Cloud"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.thehappycloud.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-happycloud.jpg" alt="The Happy Cloud"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1608,7 +1607,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Refashioner</h3>
-					<div class="client-image"><a target="_blank" href="https://refashioner.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-refashioner.jpg" alt="Refashioner"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://refashioner.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-refashioner.jpg" alt="Refashioner"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1628,7 +1627,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Ion Studio NYC</h3>
-					<div class="client-image"><a target="_blank" href="https://www.ionstudionyc.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-ion.jpg" alt="Ion Studio NYC"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.ionstudionyc.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-ion.jpg" alt="Ion Studio NYC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1648,7 +1647,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Roomorama</h3>
-					<div class="client-image"><a target="_blank" href="https://roomorama.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-roomorama.png" alt="Roomorama"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://roomorama.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-roomorama.png" alt="Roomorama"></a></div>
 					<div class="client-skills" aria-label="Services provided: Business Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1667,8 +1666,8 @@ main {
 					</div>
 				</article>
 				<article class="client">
-					<h3 class="visually-hidden">The Arabic Alphabet</h3>
-					<div class="client-image"><a target="_blank" href="https://alifbatourguide.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-arabic-alphabet.png" alt="The Arabic Alphabet"></a></div>
+					<h3 class="visually-hidden">The Arabic Alphabet: A Guided Tour</h3>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://alifbatourguide.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-arabic-alphabet.png" alt="The Arabic Alphabet"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1688,7 +1687,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">The Crane</h3>
-					<div class="client-image"><a target="_blank" href="https://www.crane.tv/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-crane.jpg" alt="The Crane"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.crane.tv/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-crane.jpg" alt="The Crane"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1708,7 +1707,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Men's Health</h3>
-					<div class="client-image"><a target="_blank" href="https://www.menshealth.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-menshealth.jpg" alt="Men's Health"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.menshealth.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-menshealth.jpg" alt="Men's Health"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1728,7 +1727,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Virtual Guidebook</h3>
-					<div class="client-image"><a target="_blank" href="https://www.virtualgdbk.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-vrtlguidebook.jpg" alt="Virtual Guidebook"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.virtualgdbk.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-vrtlguidebook.jpg" alt="Virtual Guidebook"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1748,7 +1747,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Styleite</h3>
-					<div class="client-image"><a target="_blank" href="https://www.styleite.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-styleite.gif" alt="Styleite"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.styleite.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-styleite.gif" alt="Styleite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1768,7 +1767,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Geekosystem</h3>
-					<div class="client-image"><a target="_blank" href="https://www.geekosystem.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-geekosystem.gif" alt="Geekosystem"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.geekosystem.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-geekosystem.gif" alt="Geekosystem"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1788,7 +1787,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">SportsGrid</h3>
-					<div class="client-image"><a target="_blank" href="https://www.sportsgrid.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-sportsgrid.gif" alt="SportsGrid"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.sportsgrid.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-sportsgrid.gif" alt="SportsGrid"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1808,7 +1807,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Gossip Cop</h3>
-					<div class="client-image"><a target="_blank" href="https://www.gossipcop.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-gossipcop.jpg" alt="Gossip Cop"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.gossipcop.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-gossipcop.jpg" alt="Gossip Cop"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, Business Dev, Marketing, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1828,8 +1827,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">SheetFighter</h3>
-					<div class="client-image"><a target="_blank" href="https://sheetfighter.io/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-sheetfighter.png" alt="SheetFighter"></a></div>
-					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://sheetfighter.io/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-sheetfighter.png" alt="SheetFighter"></a></div>
+					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev, Fundraising">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1848,7 +1847,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Guyism</h3>
-					<div class="client-image"><a target="_blank" href="https://www.guyism.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-guyism.jpg" alt="Guyism"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.guyism.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-guyism.jpg" alt="Guyism"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, Marketing, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1868,7 +1867,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Citysearch</h3>
-					<div class="client-image"><a target="_blank" href="https://www.citysearch.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-citysearch.jpg" alt="Citysearch"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.citysearch.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-citysearch.jpg" alt="Citysearch"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1888,7 +1887,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Soundpipe</h3>
-					<div class="client-image"><a target="_blank" href="https://soundpipe.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-soundpipe.png" alt="Soundpipe"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://soundpipe.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-soundpipe.png" alt="Soundpipe"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Press">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1908,8 +1907,8 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">View Source</h3>
-					<div class="client-image"><a target="_blank" href="https://viewsource.tv/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-viewsource.jpg" alt="View Source"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://viewsource.tv/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-viewsource.jpg" alt="View Source"></a></div>
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, Fundraising, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1928,7 +1927,7 @@ main {
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Wired</h3>
-					<div class="client-image"><a target="_blank" href="https://www.wired.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-wired.jpg" alt="Wired"></a></div>
+					<div class="client-image"><a target="_blank" rel="noopener" href="https://www.wired.com/"><img class="site-image" width="240" height="69" loading="lazy" decoding="async" src="img/logo-wired.jpg" alt="Wired"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Content Dev">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1950,16 +1949,16 @@ main {
 		</div>
 	</section>
 
-	<section id="gamma" aria-label="Decorative cloud image">
+	<section id="gamma">
 		<div class="content">
 			<img src="img/cloud.gif" alt="" role="presentation">
 		</div>
 	</section>
 </main>
 
-<div id="footer">
-	<p>© Kinda Sorta Media, LLC.</p>
-</div>
+<footer id="footer">
+	<p>&copy; Kinda Sorta Media, LLC.</p>
+</footer>
 
 <script>
 const observer = new IntersectionObserver((entries) => {
