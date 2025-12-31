@@ -188,7 +188,7 @@ main {
 
 #logo {
 	width: 100%;
-	max-width: 960px;
+	max-width: 1051px;
 	margin: 60px auto 40px;
 	padding: 0 20px;
 	box-sizing: border-box;
@@ -196,7 +196,7 @@ main {
 
 #logo img {
 	width: 100%;
-	max-width: 950px;
+	max-width: 1031px;
 	height: auto;
 }
 
@@ -249,7 +249,7 @@ main {
 .client-skills {
 	flex-shrink: 0;
 	display: grid;
-	grid-template-columns: repeat(12, 34px);
+	grid-template-columns: repeat(14, 34px);
 	gap: 8px;
 }
 
@@ -282,6 +282,8 @@ main {
 .client.in-view .client-skills > :nth-child(10) { opacity: 1; transition-delay: 500ms; }
 .client.in-view .client-skills > :nth-child(11) { opacity: 1; transition-delay: 550ms; }
 .client.in-view .client-skills > :nth-child(12) { opacity: 1; transition-delay: 600ms; }
+.client.in-view .client-skills > :nth-child(13) { opacity: 1; transition-delay: 650ms; }
+.client.in-view .client-skills > :nth-child(14) { opacity: 1; transition-delay: 700ms; }
 
 .tall-box {
 	background-color: #313131;
@@ -331,14 +333,14 @@ main {
 .skills-header-labels {
 	flex-shrink: 0;
 	display: grid;
-	grid-template-columns: repeat(12, 34px);
+	grid-template-columns: repeat(14, 34px);
 	gap: 8px;
 	align-items: end;
 }
 
 .skill-label {
 	width: 34px;
-	height: 120px;
+	height: 170px;
 	margin: 0;
 	font-size: 15px;
 	font-weight: bold;
@@ -412,7 +414,7 @@ main {
 			"@type": "Person",
 			"name": "Rex Sorgatz"
 		},
-		"serviceType": ["Digital Consulting", "Product Strategy", "Product Development", "Marketing", "Research", "Engineering", "Business Development", "Content Development", "Design", "Staffing", "Project Management", "IT"]
+		"serviceType": ["Digital Consulting", "Product Strategy", "Product Development", "Marketing", "Research", "Engineering", "Business Development", "Content Development", "Design", "Staffing", "Project Management", "Fundraising", "IT"]
 	}
 	</script>
 </head>
@@ -427,7 +429,7 @@ main {
 <main>
 	<section id="alpha">
 		<div id="logo">
-			<h1><img src="img/ksm-logo.png" alt="Kinda Sorta Media"></h1>
+			<h1><img src="img/kinda-sorta-media-logo.png" alt="Kinda Sorta Media"></h1>
 		</div>
 		<div class="teaser">
 			<p>KSM is a digital consulting agency specializing in product strategy, development, and go-to-market.</p>
@@ -443,15 +445,17 @@ main {
 					<div class="skills-header-labels">
 						<h3 class="skill-label"><span>Research</span></h3>
 						<h3 class="skill-label"><span>Strategy</span></h3>
-						<h3 class="skill-label"><span>Product</span></h3>
+						<h3 class="skill-label"><span>Product Dev</span></h3>
 						<h3 class="skill-label"><span>Design</span></h3>
-						<h3 class="skill-label"><span>Engineer</span></h3>
-						<h3 class="skill-label"><span>Content</span></h3>
+						<h3 class="skill-label"><span>Engineering</span></h3>
+						<h3 class="skill-label"><span>Content Dev</span></h3>
 						<h3 class="skill-label"><span>Staffing</span></h3>
-						<h3 class="skill-label"><span>Project</span></h3>
-						<h3 class="skill-label"><span>Business</span></h3>
+						<h3 class="skill-label"><span>Project Mgmt</span></h3>
+						<h3 class="skill-label"><span>Business Dev</span></h3>
 						<h3 class="skill-label"><span>Marketing</span></h3>
-						<h3 class="skill-label"><span>Audience</span></h3>
+						<h3 class="skill-label"><span>Press</span></h3>
+						<h3 class="skill-label"><span>Audience Dev</span></h3>
+						<h3 class="skill-label"><span>Fundraising</span></h3>
 						<h3 class="skill-label"><span>IT</span></h3>
 					</div>
 				</div>
@@ -460,7 +464,9 @@ main {
 				<article class="client">
 					<h3 class="visually-hidden">AndThen</h3>
 					<div class="client-image"><a target="_blank" href="https://andthen.chat/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-andthen.png" alt="AndThen"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -491,6 +497,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -507,7 +515,9 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -526,6 +536,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -539,6 +551,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -563,6 +577,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -580,6 +596,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -599,12 +617,14 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Of a Kind</h3>
 					<div class="client-image"><a target="_blank" href="https://www.ofakind.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-ofakind.jpg" alt="Of a Kind"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -616,7 +636,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -633,7 +655,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -653,6 +677,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -664,6 +690,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -688,7 +716,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
-						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -705,6 +735,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -724,6 +757,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -735,6 +770,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -760,6 +797,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -771,6 +810,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -794,7 +835,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -811,6 +854,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -830,14 +875,16 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Swooon</h3>
 					<div class="client-image"><a target="_blank" href="https://www.swooon.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-swooon.png" alt="Swooon"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -849,13 +896,15 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">TV Insider</h3>
 					<div class="client-image"><a target="_blank" href="https://www.tvinsider.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-tvinsider.png" alt="TV Insider"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -867,6 +916,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -882,6 +933,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -902,7 +955,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -922,12 +977,14 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">RecordSetter</h3>
 					<div class="client-image"><a target="_blank" href="https://recordsetter.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-record-setter.jpg" alt="RecordSetter"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Business Dev, Marketing">
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Business Dev, Marketing, Press">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -938,7 +995,9 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -956,7 +1015,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -974,7 +1035,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -993,6 +1056,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1006,6 +1071,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1030,6 +1097,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -1041,6 +1110,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1066,6 +1137,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -1074,6 +1147,8 @@ main {
 					<div class="client-skills" aria-label="Services provided: Strategy">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1102,17 +1177,21 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Agogo</h3>
 					<div class="client-image"><a target="_blank" href="https://agogo.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-agogo.jpg" alt="Agogo"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1136,7 +1215,9 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1156,12 +1237,14 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Project Bly</h3>
 					<div class="client-image"><a target="_blank" href="https://projectbly.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-bly.jpg" alt="Project Bly"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing">
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing, Press">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1172,6 +1255,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
@@ -1179,7 +1264,7 @@ main {
 				<article class="client">
 					<h3 class="visually-hidden">B5 Media</h3>
 					<div class="client-image"><a target="_blank" href="https://b5media.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-b5.jpg" alt="B5 Media"></a></div>
-					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1191,13 +1276,15 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Pose</h3>
 					<div class="client-image"><a target="_blank" href="https://pose.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-pose.jpg" alt="Pose"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1209,13 +1296,15 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Itemize</h3>
 					<div class="client-image"><a target="_blank" href="https://www.itemize.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-itemize.png" alt="Itemize"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Business Dev, Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Business Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1227,6 +1316,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1244,7 +1335,9 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1264,6 +1357,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -1279,6 +1374,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1299,13 +1396,15 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Uncram</h3>
 					<div class="client-image"><a target="_blank" href="https://www.uncram.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-uncram.jpg" alt="Uncram"></a></div>
-					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1317,6 +1416,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1335,13 +1436,15 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Quickish</h3>
 					<div class="client-image"><a target="_blank" href="https://www.quickish.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-quickish.jpg" alt="Quickish"></a></div>
-					<div class="client-skills" aria-label="Services provided: Product Dev, Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Product Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1353,6 +1456,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1370,14 +1475,16 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">NearSay</h3>
 					<div class="client-image"><a target="_blank" href="https://www.nearsay.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-nearsay.jpg" alt="NearSay"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Content Dev, Business Dev, Marketing">
+					<div class="client-skills" aria-label="Services provided: Strategy, Content Dev, Business Dev, Marketing, Press">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1388,14 +1495,16 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Hatch Plans</h3>
 					<div class="client-image"><a target="_blank" href="https://hatchplans.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-hatch.jpg" alt="Hatch Plans"></a></div>
-					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1405,6 +1514,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1425,13 +1536,15 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Erica Weiner Jewelry</h3>
 					<div class="client-image"><a target="_blank" href="https://www.ericaweiner.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-erica-weiner.jpg" alt="Erica Weiner Jewelry"></a></div>
-					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1443,6 +1556,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1461,13 +1576,15 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">The Happy Cloud</h3>
 					<div class="client-image"><a target="_blank" href="https://www.thehappycloud.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-happycloud.jpg" alt="The Happy Cloud"></a></div>
-					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1479,6 +1596,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1496,7 +1615,9 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1516,12 +1637,14 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Roomorama</h3>
 					<div class="client-image"><a target="_blank" href="https://roomorama.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-roomorama.png" alt="Roomorama"></a></div>
-					<div class="client-skills" aria-label="Services provided: Business Dev, Marketing, Audience Dev">
+					<div class="client-skills" aria-label="Services provided: Business Dev, Marketing, Press, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1533,6 +1656,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1544,6 +1669,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1568,7 +1695,9 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1586,7 +1715,9 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1600,6 +1731,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1623,6 +1756,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1639,6 +1774,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1659,6 +1796,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1676,6 +1815,8 @@ main {
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
@@ -1696,6 +1837,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
@@ -1712,7 +1855,9 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
@@ -1730,14 +1875,16 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 					</div>
 				</article>
 				<article class="client">
 					<h3 class="visually-hidden">Soundpipe</h3>
 					<div class="client-image"><a target="_blank" href="https://soundpipe.com/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-soundpipe.png" alt="Soundpipe"></a></div>
-					<div class="client-skills" aria-label="Services provided: Marketing">
+					<div class="client-skills" aria-label="Services provided: Marketing, Press">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1748,6 +1895,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 					</div>
@@ -1755,7 +1904,9 @@ main {
 				<article class="client">
 					<h3 class="visually-hidden">View Source</h3>
 					<div class="client-image"><a target="_blank" href="https://viewsource.tv/"><img class="site-image" width="240" height="69" loading="lazy" src="img/logo-viewsource.jpg" alt="View Source"></a></div>
-					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
+					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Press, Audience Dev, IT">
+						<span class="tall-box" aria-hidden="true"></span>
+						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
@@ -1780,6 +1931,8 @@ main {
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
+						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
