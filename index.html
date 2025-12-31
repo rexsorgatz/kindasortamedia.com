@@ -23,186 +23,271 @@
 	<meta name="twitter:description" content="KSM is a digital consulting agency and incubator specializing in product strategy, development, and marketing.">
 	<meta name="twitter:image" content="https://kindasortamedia.com/img/ksm-logo.png">
 
+	<meta name="theme-color" content="#000000">
 	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon" type="image/png" href="img/ksm-logo.png">
 
 	<style>
-		body {
-			margin: 0 auto;
-			text-align: center;
-			font-family: "Gotham Black", "Arial Black", Gadget, Arial, Helvetica, sans-serif;
-			min-height: 100%;
-		}
-		h2 {
-			margin: 0;
-			padding: 0;
-			font-size: 14px;
-			line-height: 30px;
-			text-transform: uppercase;
-			font-weight: normal;
-		}
-		p {
-			margin: 0 0 25px;
-			padding: 0;
-			font-size: 42px;
-			line-height: 55px;
-		}
-		a {
-			border: 0;
-			text-decoration: none;
-		}
-		img {
-			border: 0;
-		}
-		.site-image {
-			border: 1px solid #000;
-			width: 286px;
-			height: 82px;
-		}
-		div#header {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 25px;
-			background-color: #000;
-			text-align: right;
-		}
-		@media screen {
-			body > div#header {
-				position: fixed;
-			}
-		}
-		#alpha {
-			width: 960px;
-			margin: 0 auto;
-		}
-		#beta {
-			background-color: #eaeaea;
-			overflow: hidden;
-			padding-bottom: 30px;
-		}
-		#gamma {
-			margin: 0 auto;
-			overflow: hidden;
-			padding: 30px 0;
-			border-top: 3px solid #000;
-		}
-		.content {
-			width: 960px;
-			margin: 0 auto;
-			display: table;
-		}
-		.content p {
-			text-align: left;
-		}
-		#logo {
-			width: 960px;
-			margin: 60px 0 40px;
-			height: 120px;
-		}
-		#header img {
-			padding-top: 3px;
-		}
-		#header a {
-			padding: 5px 10px 10px 0;
-			color: #fff;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 10px;
-			font-weight: bold;
-		}
-		.color-a60000 { background-color: #a60000; }
-		.color-0060ff { background-color: #0060ff; }
-		.color-ea00ff { background-color: #ea00ff; }
-		.color-ffea00 { background-color: #ffea00; }
-		.color-00d8e6 { background-color: #00d8e6; }
-		.color-ff7e00 { background-color: #ff7e00; }
-		.color-00ff06 { background-color: #00ff06; }
-		.color-ffffff { background-color: #fff; }
-		.color-000000 { background-color: #000; }
-		.color-edeeb4 { background-color: #edeeb4; }
-		.color-8f0087 { background-color: #8f0087; }
-		.color-eaa7a2 { background-color: #eaa7a2; }
-		.teaser {
-			padding: 5px 0 0 20px;
-			margin: 60px 0;
-			text-align: left;
-		}
-		.teaser p a {
-			color: #000;
-		}
-		.teaser p span {
-			background-color: #fbe600;
-			padding: 5px;
-		}
-		.teaser p {
-			margin-left: 120px;
-		}
-		.teaser p a:hover {
-			color: #fff;
-			background-color: #000;
-		}
-		.teaser img {
-			margin-top: -12px;
-		}
-		.bottom {
-			padding: 0 20px 10px;
-			margin: 0 0 10px;
-		}
-		#beta p {
-			font-size: 30px;
-			background-color: #000;
-			color: #fff;
-			text-transform: uppercase;
-		}
-		.column {
-			width: 180px;
-			float: left;
-			margin-left: 50px;
-		}
-		.clients {
-			padding-top: 20px;
-		}
-		.client-image {
-			clear: both;
-			margin: 10px 10px 0 0;
-			width: 420px;
-			text-align: right;
-			float: left;
-			overflow: hidden;
-		}
-		.client-skills {
-			width: 520px;
-			margin: 10px 0 0 10px;
-			float: right;
-		}
-		.skill {
-			padding-top: 15px;
-			clear: both;
-		}
-		.small-box {
-			height: 30px;
-			width: 30px;
-			float: left;
-			margin-right: 6px;
-			border: 1px solid #000;
-		}
-		.tall-box {
-			height: 82px;
-			width: 30px;
-			float: left;
-			margin-right: 6px;
-			border: 1px solid #000;
-		}
-		.empty-tall-box {
-			height: 82px;
-			width: 32px;
-			float: left;
-			margin-right: 6px;
-		}
-		.label {
-			float: left;
-		}
+:root {
+	--color-research: #a60000;
+	--color-engineering: #00d8e6;
+	--color-business-dev: #000;
+	--color-strategy: #0060ff;
+	--color-content-dev: #ff7e00;
+	--color-marketing: #edeeb4;
+	--color-product-dev: #ea00ff;
+	--color-staffing: #00ff06;
+	--color-audience-dev: #8f0087;
+	--color-design: #ffea00;
+	--color-project-mgmt: #fff;
+	--color-it: #eaa7a2;
+	--bg-gray: #eaeaea;
+	--highlight-yellow: #fbe600;
+	--max-width: 960px;
+}
+
+body {
+	margin: 0 auto;
+	text-align: center;
+	font-family: "Gotham Black", "Arial Black", Gadget, Arial, Helvetica, sans-serif;
+	min-height: 100%;
+	color: #000;
+}
+
+h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 30px;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+p {
+	margin: 0 0 25px;
+	padding: 0;
+	font-size: 42px;
+	line-height: 55px;
+}
+
+a {
+	border: 0;
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	border: 0;
+}
+
+.site-image {
+	border: 1px solid #000;
+	width: 286px;
+	height: 82px;
+}
+
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 25px;
+	background-color: #000;
+	text-align: right;
+	z-index: 1000;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#header a {
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	padding-right: 15px;
+}
+
+main {
+	padding-top: 25px;
+}
+
+#alpha {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#logo {
+	width: 960px;
+	margin: 60px 0 40px;
+	height: 120px;
+}
+
+.teaser {
+	padding: 5px 0 0 20px;
+	margin: 60px 0;
+	text-align: left;
+}
+
+.teaser p {
+	margin-left: 120px;
+}
+
+.teaser p span {
+	background-color: var(--highlight-yellow);
+	padding: 5px;
+}
+
+#beta {
+	background-color: var(--bg-gray);
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+
+#beta > p {
+	font-size: 30px;
+	background-color: #000;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.content {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.bottom {
+	padding: 0 20px 10px;
+	margin: 0 0 10px;
+}
+
+.skills-grid {
+	display: block;
+	width: 960px;
+	overflow: hidden;
+}
+
+.column {
+	width: 180px;
+	float: left;
+	margin-left: 50px;
+	text-align: left;
+}
+
+.skill {
+	padding-top: 15px;
+	clear: both;
+}
+
+.small-box {
+	height: 30px;
+	width: 30px;
+	float: left;
+	margin-right: 6px;
+	border: 1px solid #000;
+}
+
+.label {
+	float: left;
+}
+
+.clients {
+	padding-top: 20px;
+}
+
+.client {
+	clear: both;
+	overflow: hidden;
+}
+
+.client-image {
+	width: 420px;
+	margin: 10px 10px 0 0;
+	text-align: right;
+	float: left;
+}
+
+.client-skills {
+	width: 520px;
+	margin: 10px 0 0 10px;
+	float: right;
+	text-align: left;
+}
+
+.tall-box {
+	height: 82px;
+	width: 30px;
+	float: left;
+	margin-right: 6px;
+	border: 1px solid #000;
+}
+
+.empty-tall-box {
+	height: 82px;
+	width: 32px;
+	float: left;
+	margin-right: 6px;
+}
+
+#gamma {
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 30px 0;
+	border-top: 3px solid #000;
+}
+
+#footer p {
+	font-size: 10px;
+	color: #999;
+	margin: 0;
+	padding: 5px;
+}
+
+/* Color Classes */
+.color-a60000 { background-color: var(--color-research); }
+.color-00d8e6 { background-color: var(--color-engineering); }
+.color-000000 { background-color: var(--color-business-dev); }
+.color-0060ff { background-color: var(--color-strategy); }
+.color-ff7e00 { background-color: var(--color-content-dev); }
+.color-edeeb4 { background-color: var(--color-marketing); }
+.color-ea00ff { background-color: var(--color-product-dev); }
+.color-00ff06 { background-color: var(--color-staffing); }
+.color-8f0087 { background-color: var(--color-audience-dev); }
+.color-ffea00 { background-color: var(--color-design); }
+.color-ffffff { background-color: var(--color-project-mgmt); }
+.color-eaa7a2 { background-color: var(--color-it); }
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+	#alpha, #logo, .content, .skills-grid {
+		width: 100%;
+	}
+	.teaser p {
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size: 28px;
+		line-height: 1.3;
+	}
+	.column {
+		margin-left: 20px;
+		width: auto;
+		float: none;
+		display: inline-block;
+	}
+	.client-image, .client-skills {
+		width: 100%;
+		float: none;
+		text-align: center;
+		margin: 10px 0;
+		display: flex;
+		justify-content: center;
+	}
+	.client-skills {
+		flex-wrap: wrap;
+	}
+}
 	</style>
 
 	<!-- Structured Data -->
@@ -227,8 +312,8 @@
 
 <body>
 <div id="header">
-	<a href="mailto:rexsorgatz@gmail.com?Subject=KSM+Info" aria-label="Contact KSM via email">
-		<img src="img/email.png" alt="Email icon">
+	<a href="mailto:rexsorgatz@gmail.com?Subject=KSM+Info">
+		<span>CONTACT</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: block;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 	</a>
 </div>
 
@@ -247,32 +332,34 @@
 		<p>Skills we perform &amp; companies we work with</p>
 		<div class="bottom">
 			<div class="content">
-				<div class="column">
-					<div class="skill"><div class="color-a60000 small-box" aria-hidden="true"></div><h2 class="label">Research</h2></div>
-					<div class="skill"><div class="color-00d8e6 small-box" aria-hidden="true"></div><h2 class="label">Engineering</h2></div>
-					<div class="skill"><div class="color-000000 small-box" aria-hidden="true"></div><h2 class="label">Business Dev</h2></div>
-				</div>
-				<div class="column">
-					<div class="skill"><div class="color-0060ff small-box" aria-hidden="true"></div><h2 class="label">Strategy</h2></div>
-					<div class="skill"><div class="color-ff7e00 small-box" aria-hidden="true"></div><h2 class="label">Content Dev</h2></div>
-					<div class="skill"><div class="color-edeeb4 small-box" aria-hidden="true"></div><h2 class="label">Marketing</h2></div>
-				</div>
-				<div class="column">
-					<div class="skill"><div class="color-ea00ff small-box" aria-hidden="true"></div><h2 class="label">Product Dev</h2></div>
-					<div class="skill"><div class="color-00ff06 small-box" aria-hidden="true"></div><h2 class="label">Staffing</h2></div>
-					<div class="skill"><div class="color-8f0087 small-box" aria-hidden="true"></div><h2 class="label">Audience Dev</h2></div>
-				</div>
-				<div class="column">
-					<div class="skill"><div class="color-ffea00 small-box" aria-hidden="true"></div><h2 class="label">Design</h2></div>
-					<div class="skill"><div class="color-ffffff small-box" aria-hidden="true"></div><h2 class="label">Project Mgmt</h2></div>
-					<div class="skill"><div class="color-eaa7a2 small-box" aria-hidden="true"></div><h2 class="label">IT</h2></div>
+				<div class="skills-grid">
+					<div class="column">
+						<div class="skill"><div class="color-a60000 small-box" aria-hidden="true"></div><h2 class="label">Research</h2></div>
+						<div class="skill"><div class="color-00d8e6 small-box" aria-hidden="true"></div><h2 class="label">Engineering</h2></div>
+						<div class="skill"><div class="color-000000 small-box" aria-hidden="true"></div><h2 class="label">Business Dev</h2></div>
+					</div>
+					<div class="column">
+						<div class="skill"><div class="color-0060ff small-box" aria-hidden="true"></div><h2 class="label">Strategy</h2></div>
+						<div class="skill"><div class="color-ff7e00 small-box" aria-hidden="true"></div><h2 class="label">Content Dev</h2></div>
+						<div class="skill"><div class="color-edeeb4 small-box" aria-hidden="true"></div><h2 class="label">Marketing</h2></div>
+					</div>
+					<div class="column">
+						<div class="skill"><div class="color-ea00ff small-box" aria-hidden="true"></div><h2 class="label">Product Dev</h2></div>
+						<div class="skill"><div class="color-00ff06 small-box" aria-hidden="true"></div><h2 class="label">Staffing</h2></div>
+						<div class="skill"><div class="color-8f0087 small-box" aria-hidden="true"></div><h2 class="label">Audience Dev</h2></div>
+					</div>
+					<div class="column">
+						<div class="skill"><div class="color-ffea00 small-box" aria-hidden="true"></div><h2 class="label">Design</h2></div>
+						<div class="skill"><div class="color-ffffff small-box" aria-hidden="true"></div><h2 class="label">Project Mgmt</h2></div>
+						<div class="skill"><div class="color-eaa7a2 small-box" aria-hidden="true"></div><h2 class="label">IT</h2></div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="clients">
 			<div class="content">
 				<article class="client">
-					<div class="client-image"><img class="site-image" width="286" height="82" src="img/logo-snl.jpg" alt="SNL Digital"></div>
+					<div class="client-image"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-snl.jpg" alt="SNL Digital"></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev, Staffing, Project Mgmt, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -289,7 +376,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.wework.com/"><img class="site-image" width="286" height="82" src="img/logo-wework.png" alt="WeWork"></a></div>
+					<div class="client-image"><a href="https://www.wework.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-wework.png" alt="WeWork"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -306,7 +393,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.ofakind.com/"><img class="site-image" width="286" height="82" src="img/logo-ofakind.jpg" alt="Of a Kind"></a></div>
+					<div class="client-image"><a href="https://www.ofakind.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-ofakind.jpg" alt="Of a Kind"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -323,7 +410,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.interviewmagazine.com/"><img class="site-image" width="286" height="82" src="img/logo-interview.png" alt="Interview Magazine"></a></div>
+					<div class="client-image"><a href="https://www.interviewmagazine.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-interview.png" alt="Interview Magazine"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Engineering, Business Dev, Marketing, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -340,7 +427,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.medium.com/"><img class="site-image" width="286" height="82" src="img/logo-medium.png" alt="Medium"></a></div>
+					<div class="client-image"><a href="https://www.medium.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-medium.png" alt="Medium"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -357,7 +444,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.buzzfeed.com/"><img class="site-image" width="286" height="82" src="img/logo-buzzfeed.jpg" alt="BuzzFeed"></a></div>
+					<div class="client-image"><a href="https://www.buzzfeed.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-buzzfeed.jpg" alt="BuzzFeed"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -374,7 +461,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://rookiemag.com/"><img class="site-image" width="286" height="82" src="img/logo-rookie.jpg" alt="Rookie Magazine"></a></div>
+					<div class="client-image"><a href="https://rookiemag.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-rookie.jpg" alt="Rookie Magazine"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -391,7 +478,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.nytimes.com/"><img class="site-image" width="286" height="82" src="img/logo-nyt.gif" alt="The New York Times"></a></div>
+					<div class="client-image"><a href="https://www.nytimes.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-nyt.gif" alt="The New York Times"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Business Dev, Marketing">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -408,7 +495,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.theweek.com/"><img class="site-image" width="286" height="82" src="img/logo-theweek.jpg" alt="The Week"></a></div>
+					<div class="client-image"><a href="https://www.theweek.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-theweek.jpg" alt="The Week"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -425,7 +512,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://agogo.com/"><img class="site-image" width="286" height="82" src="img/logo-agogo.jpg" alt="Agogo"></a></div>
+					<div class="client-image"><a href="https://agogo.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-agogo.jpg" alt="Agogo"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -442,7 +529,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.theplayerstribune.com/"><img class="site-image" width="286" height="82" src="img/logo-the-players-tribune.jpg" alt="The Players Tribune"></a></div>
+					<div class="client-image"><a href="https://www.theplayerstribune.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-the-players-tribune.jpg" alt="The Players Tribune"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -459,7 +546,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.mlssoccer.com/"><img class="site-image" width="286" height="82" src="img/logo-mls.jpg" alt="MLS Soccer"></a></div>
+					<div class="client-image"><a href="https://www.mlssoccer.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-mls.jpg" alt="MLS Soccer"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -476,7 +563,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.ifc.com/"><img class="site-image" width="286" height="82" src="img/logo-ifc.jpg" alt="IFC"></a></div>
+					<div class="client-image"><a href="https://www.ifc.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-ifc.jpg" alt="IFC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -493,7 +580,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.howaboutwe.com/"><img class="site-image" width="286" height="82" src="img/logo-howaboutwe.jpg" alt="HowAboutWe"></a></div>
+					<div class="client-image"><a href="https://www.howaboutwe.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-howaboutwe.jpg" alt="HowAboutWe"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -510,7 +597,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.flavorwire.com/"><img class="site-image" width="286" height="82" src="img/logo-flavorpill.jpg" alt="Flavorpill"></a></div>
+					<div class="client-image"><a href="https://www.flavorwire.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-flavorpill.jpg" alt="Flavorpill"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -527,7 +614,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.tipjar.it/"><img class="site-image" width="286" height="82" src="img/logo-tipjar.jpg" alt="TipJar"></a></div>
+					<div class="client-image"><a href="https://www.tipjar.it/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tipjar.jpg" alt="TipJar"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -544,7 +631,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.tvguidemagazine.com/"><img class="site-image" width="286" height="82" src="img/logo-tvguide.jpg" alt="TV Guide"></a></div>
+					<div class="client-image"><a href="https://www.tvguidemagazine.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tvguide.jpg" alt="TV Guide"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -561,7 +648,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.thisamericanlife.org/"><img class="site-image" width="286" height="82" src="img/logo-tal.gif" alt="This American Life"></a></div>
+					<div class="client-image"><a href="https://www.thisamericanlife.org/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tal.gif" alt="This American Life"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -578,7 +665,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://skiftnews.com/"><img class="site-image" width="286" height="82" src="img/logo-skift.jpg" alt="Skift"></a></div>
+					<div class="client-image"><a href="https://skiftnews.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-skift.jpg" alt="Skift"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Project Mgmt">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -595,7 +682,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.mediaite.com/"><img class="site-image" width="286" height="82" src="img/logo-mediaite.jpg" alt="Mediaite"></a></div>
+					<div class="client-image"><a href="https://www.mediaite.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-mediaite.jpg" alt="Mediaite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -612,7 +699,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.goviva.com/"><img class="site-image" width="286" height="82" src="img/logo-goviva.jpg" alt="GoViva"></a></div>
+					<div class="client-image"><a href="https://www.goviva.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-goviva.jpg" alt="GoViva"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -629,7 +716,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://tvinsider.com/"><img class="site-image" width="286" height="82" src="img/logo-tvinsider.png" alt="TV Insider"></a></div>
+					<div class="client-image"><a href="https://tvinsider.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tvinsider.png" alt="TV Insider"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -646,7 +733,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.recordsetter.com/"><img class="site-image" width="286" height="82" src="img/logo-record-setter.jpg" alt="RecordSetter"></a></div>
+					<div class="client-image"><a href="https://www.recordsetter.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-record-setter.jpg" alt="RecordSetter"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -663,7 +750,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://mi.lk/"><img class="site-image" width="286" height="82" src="img/logo-milkmade.png" alt="Milk Made"></a></div>
+					<div class="client-image"><a href="https://mi.lk/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-milkmade.png" alt="Milk Made"></a></div>
 					<div class="client-skills" aria-label="Services provided: Content Dev, Staffing, Project Mgmt, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -680,7 +767,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.newsweek.com/"><img class="site-image" width="286" height="82" src="img/logo-newsweek.jpg" alt="Newsweek"></a></div>
+					<div class="client-image"><a href="https://www.newsweek.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-newsweek.jpg" alt="Newsweek"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Engineering, Staffing, Project Mgmt, Marketing, Audience Dev">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -697,7 +784,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://simplereach.com/"><img class="site-image" width="286" height="82" src="img/logo-simplereach.jpg" alt="SimpleReach"></a></div>
+					<div class="client-image"><a href="https://simplereach.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-simplereach.jpg" alt="SimpleReach"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Content Dev, Project Mgmt, Business Dev, Marketing">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -714,7 +801,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://projectbly.com/"><img class="site-image" width="286" height="82" src="img/logo-bly.jpg" alt="Project Bly"></a></div>
+					<div class="client-image"><a href="https://projectbly.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-bly.jpg" alt="Project Bly"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -731,7 +818,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.b5media.com/"><img class="site-image" width="286" height="82" src="img/logo-b5.jpg" alt="B5 Media"></a></div>
+					<div class="client-image"><a href="https://www.b5media.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-b5.jpg" alt="B5 Media"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -748,7 +835,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://pose.com/"><img class="site-image" width="286" height="82" src="img/logo-pose.jpg" alt="Pose"></a></div>
+					<div class="client-image"><a href="https://pose.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-pose.jpg" alt="Pose"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -765,7 +852,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.itemize.com/"><img class="site-image" width="286" height="82" src="img/logo-itemize.png" alt="Itemize"></a></div>
+					<div class="client-image"><a href="https://www.itemize.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-itemize.png" alt="Itemize"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -782,7 +869,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.macartiststweets.com/"><img class="site-image" width="286" height="82" src="img/logo-mac.jpg" alt="MAC Artists"></a></div>
+					<div class="client-image"><a href="https://www.macartiststweets.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-mac.jpg" alt="MAC Artists"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -799,7 +886,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://tubefilter.com/"><img class="site-image" width="286" height="82" src="img/logo-tubefilter.jpg" alt="Tubefilter"></a></div>
+					<div class="client-image"><a href="https://tubefilter.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tubefilter.jpg" alt="Tubefilter"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -816,7 +903,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://tetranliving.com/"><img class="site-image" width="286" height="82" src="img/logo-tetran.jpg" alt="Tetran Living"></a></div>
+					<div class="client-image"><a href="https://tetranliving.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-tetran.jpg" alt="Tetran Living"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -833,7 +920,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.uncram.com/"><img class="site-image" width="286" height="82" src="img/logo-uncram.jpg" alt="Uncram"></a></div>
+					<div class="client-image"><a href="https://www.uncram.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-uncram.jpg" alt="Uncram"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -850,7 +937,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.gq.com/"><img class="site-image" width="286" height="82" src="img/logo-gq.jpg" alt="GQ Magazine"></a></div>
+					<div class="client-image"><a href="https://www.gq.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-gq.jpg" alt="GQ Magazine"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -867,7 +954,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://thecampussocialite.com/"><img class="site-image" width="286" height="82" src="img/logo-campussocialite.jpg" alt="The Campus Socialite"></a></div>
+					<div class="client-image"><a href="https://thecampussocialite.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-campussocialite.jpg" alt="The Campus Socialite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -884,7 +971,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.quickish.com/"><img class="site-image" width="286" height="82" src="img/logo-quickish.jpg" alt="Quickish"></a></div>
+					<div class="client-image"><a href="https://www.quickish.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-quickish.jpg" alt="Quickish"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -901,7 +988,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.nearsay.com/"><img class="site-image" width="286" height="82" src="img/logo-nearsay.jpg" alt="NearSay"></a></div>
+					<div class="client-image"><a href="https://www.nearsay.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-nearsay.jpg" alt="NearSay"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Content Dev, Business Dev, Marketing">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -918,7 +1005,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://hatchplans.com/"><img class="site-image" width="286" height="82" src="img/logo-hatch.jpg" alt="Hatch Plans"></a></div>
+					<div class="client-image"><a href="https://hatchplans.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-hatch.jpg" alt="Hatch Plans"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -935,7 +1022,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://ericaweiner.com/"><img class="site-image" width="286" height="82" src="img/logo-erica-weiner.jpg" alt="Erica Weiner Jewelry"></a></div>
+					<div class="client-image"><a href="https://ericaweiner.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-erica-weiner.jpg" alt="Erica Weiner Jewelry"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -952,7 +1039,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.mogulite.com/"><img class="site-image" width="286" height="82" src="img/logo-mogulite.jpg" alt="Mogulite"></a></div>
+					<div class="client-image"><a href="https://www.mogulite.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-mogulite.jpg" alt="Mogulite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -969,7 +1056,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.thehappycloud.com/"><img class="site-image" width="286" height="82" src="img/logo-happycloud.jpg" alt="The Happy Cloud"></a></div>
+					<div class="client-image"><a href="https://www.thehappycloud.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-happycloud.jpg" alt="The Happy Cloud"></a></div>
 					<div class="client-skills" aria-label="Services provided: Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -986,7 +1073,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.refashioner.com/"><img class="site-image" width="286" height="82" src="img/logo-refashioner.jpg" alt="Refashioner"></a></div>
+					<div class="client-image"><a href="https://www.refashioner.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-refashioner.jpg" alt="Refashioner"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1003,7 +1090,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.ionstudionyc.com/"><img class="site-image" width="286" height="82" src="img/logo-ion.jpg" alt="Ion Studio NYC"></a></div>
+					<div class="client-image"><a href="https://www.ionstudionyc.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-ion.jpg" alt="Ion Studio NYC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1020,7 +1107,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://roomorama.com/"><img class="site-image" width="286" height="82" src="img/logo-roomorama.png" alt="Roomorama"></a></div>
+					<div class="client-image"><a href="https://roomorama.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-roomorama.png" alt="Roomorama"></a></div>
 					<div class="client-skills" aria-label="Services provided: Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1037,7 +1124,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://thecrane.tv/"><img class="site-image" width="286" height="82" src="img/logo-crane.jpg" alt="The Crane"></a></div>
+					<div class="client-image"><a href="https://thecrane.tv/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-crane.jpg" alt="The Crane"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Business Dev, Marketing, Audience Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1054,7 +1141,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.menshealth.com/"><img class="site-image" width="286" height="82" src="img/logo-menshealth.jpg" alt="Men's Health"></a></div>
+					<div class="client-image"><a href="https://www.menshealth.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-menshealth.jpg" alt="Men's Health"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Content Dev, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1071,7 +1158,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.virtualgdbk.com/"><img class="site-image" width="286" height="82" src="img/logo-vrtlguidebook.jpg" alt="Virtual Guidebook"></a></div>
+					<div class="client-image"><a href="https://www.virtualgdbk.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-vrtlguidebook.jpg" alt="Virtual Guidebook"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1088,7 +1175,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.msnbc.com/"><img class="site-image" width="286" height="82" src="img/logo-msnbc.jpg" alt="MSNBC"></a></div>
+					<div class="client-image"><a href="https://www.msnbc.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-msnbc.jpg" alt="MSNBC"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1104,7 +1191,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.styleite.com/"><img class="site-image" width="286" height="82" src="img/logo-styleite.gif" alt="Styleite"></a></div>
+					<div class="client-image"><a href="https://www.styleite.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-styleite.gif" alt="Styleite"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1121,7 +1208,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.geekosystem.com/"><img class="site-image" width="286" height="82" src="img/logo-geekosystem.gif" alt="Geekosystem"></a></div>
+					<div class="client-image"><a href="https://www.geekosystem.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-geekosystem.gif" alt="Geekosystem"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1138,7 +1225,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.sportsgrid.com/"><img class="site-image" width="286" height="82" src="img/logo-sportsgrid.gif" alt="SportsGrid"></a></div>
+					<div class="client-image"><a href="https://www.sportsgrid.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-sportsgrid.gif" alt="SportsGrid"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1155,7 +1242,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.nbcolympics.com/"><img class="site-image" width="286" height="82" src="img/logo-olympics.jpg" alt="NBC Olympics"></a></div>
+					<div class="client-image"><a href="https://www.nbcolympics.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-olympics.jpg" alt="NBC Olympics"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1172,7 +1259,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.gossipcop.com/"><img class="site-image" width="286" height="82" src="img/logo-gossipcop.jpg" alt="Gossip Cop"></a></div>
+					<div class="client-image"><a href="https://www.gossipcop.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-gossipcop.jpg" alt="Gossip Cop"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Content Dev, Project Mgmt, Business Dev, Marketing, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1189,7 +1276,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.guyism.com/"><img class="site-image" width="286" height="82" src="img/logo-guyism.jpg" alt="Guyism"></a></div>
+					<div class="client-image"><a href="https://www.guyism.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-guyism.jpg" alt="Guyism"></a></div>
 					<div class="client-skills" aria-label="Services provided: Strategy, Product Dev, Design, Engineering, Business Dev, Marketing, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1206,7 +1293,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.citysearch.com/"><img class="site-image" width="286" height="82" src="img/logo-citysearch.jpg" alt="Citysearch"></a></div>
+					<div class="client-image"><a href="https://www.citysearch.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-citysearch.jpg" alt="Citysearch"></a></div>
 					<div class="client-skills" aria-label="Services provided: Product Dev, Design, Engineering, Audience Dev, IT">
 						<span class="empty-tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1223,7 +1310,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://viewsource.tv/"><img class="site-image" width="286" height="82" src="img/logo-viewsource.jpg" alt="View Source"></a></div>
+					<div class="client-image"><a href="https://viewsource.tv/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-viewsource.jpg" alt="View Source"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Strategy, Product Dev, Design, Engineering, Content Dev, Staffing, Project Mgmt, Business Dev, Marketing, Audience Dev, IT">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="color-0060ff tall-box" aria-hidden="true"></span>
@@ -1240,7 +1327,7 @@
 					</div>
 				</article>
 				<article class="client">
-					<div class="client-image"><a href="https://www.wired.com/"><img class="site-image" width="286" height="82" src="img/logo-wired.jpg" alt="Wired"></a></div>
+					<div class="client-image"><a href="https://www.wired.com/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-wired.jpg" alt="Wired"></a></div>
 					<div class="client-skills" aria-label="Services provided: Research, Content Dev">
 						<span class="color-a60000 tall-box" aria-hidden="true"></span>
 						<span class="empty-tall-box" aria-hidden="true"></span>
@@ -1268,7 +1355,7 @@
 </main>
 
 <div id="footer">
-	<p style="font-size: 10px; color: #999; margin: 0; padding: 5px;">Copyright Kinda Sorta Media. All rights reserved.</p>
+	<p>© Kinda Sorta Media, LLC.</p>
 </div>
 
 </body>
