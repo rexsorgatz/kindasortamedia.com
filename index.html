@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=960">
 	<title>Kinda Sorta Media | Digital Consulting Agency - Strategy, Development & Marketing</title>
-	<meta name="description" content="KSM is a digital consulting agency and incubator specializing in product strategy, development, and marketing for media, entertainment brands, and startups.">
-	<meta name="keywords" content="digital consulting, product strategy, digital marketing, media consulting, startup consulting, product development">
+	<meta name="description" content="KSM is a digital consulting agency specializing in product strategy, development, and marketing for media, entertainment brands, and startups.">
+	<meta name="keywords" content="Rex Sorgatz, agency, digital consulting, product strategy, digital marketing, media consulting, startup consulting, product development">
 	<meta name="author" content="Rex Sorgatz">
 	<meta name="robots" content="index, follow">
 	<link rel="canonical" href="https://kindasortamedia.com/">
@@ -14,13 +14,13 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://kindasortamedia.com/">
 	<meta property="og:title" content="Kinda Sorta Media | Digital Consulting Agency">
-	<meta property="og:description" content="KSM is a digital consulting agency and incubator specializing in product strategy, development, and marketing for media, entertainment brands, and startups.">
+	<meta property="og:description" content="KSM is a digital consulting agency specializing in product strategy, development, and marketing for media, entertainment brands, and startups.">
 	<meta property="og:image" content="https://kindasortamedia.com/img/kinda-sorta-media-logo-social.png">
 	<meta property="og:site_name" content="Kinda Sorta Media">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Kinda Sorta Media | Digital Consulting Agency">
-	<meta name="twitter:description" content="KSM is a digital consulting agency and incubator specializing in product strategy, development, and marketing.">
+	<meta name="twitter:description" content="KSM is a digital consulting agency specializing in product strategy, development, and marketing.">
 	<meta name="twitter:image" content="https://kindasortamedia.com/img/kinda-sorta-media-logo-social.png">
 
 	<meta name="theme-color" content="#000000">
@@ -192,15 +192,12 @@ main {
 
 #logo {
 	width: 100%;
-	max-width: 1051px;
+	max-width: var(--max-width);
 	margin: 60px auto 40px;
-	padding: 0 20px;
-	box-sizing: border-box;
 }
 
 #logo img {
 	width: 100%;
-	max-width: 1031px;
 	height: auto;
 }
 
@@ -261,13 +258,21 @@ main {
 
 .tall-box,
 .empty-tall-box {
-	height: 69px;
+	height: 71px;
 	width: 34px;
-	border: 1px solid #dddddd;
 	box-sizing: border-box;
 	margin-left: 4px;
 }
 
+.empty-tall-box {
+	border: 1px solid #dddddd;
+	background-color: #dddddd;
+}
+
+.tall-box {
+	background-color: #000000;
+	border: 1px solid #000000;
+}
 /* Piano animation */
 .client-image,
 .tall-box,
@@ -291,10 +296,6 @@ main {
 .client.in-view .client-skills > :nth-child(12) { opacity: 1; transition-delay: 600ms; }
 .client.in-view .client-skills > :nth-child(13) { opacity: 1; transition-delay: 650ms; }
 .client.in-view .client-skills > :nth-child(14) { opacity: 1; transition-delay: 700ms; }
-
-.tall-box {
-	background-color: #000000;
-}
 
 #gamma {
 	margin: 0 auto;
@@ -331,7 +332,7 @@ main {
 	width: 240px;
 	flex-shrink: 0;
 	margin: 0;
-	font-size: 26px;
+	font-size: 22px;
 	text-transform: uppercase;
 	text-align: right;
 	align-self: flex-end;
@@ -371,36 +372,6 @@ main {
 	letter-spacing: 2px;
 	margin-bottom: 8px;
 }
-
-/* Responsive Adjustments */
-@media (max-width: 960px) {
-	#alpha, .content {
-		width: 100%;
-	}
-	.teaser p {
-		margin-left: 20px;
-		margin-right: 20px;
-		font-size: 28px;
-		line-height: 1.3;
-	}
-	.client {
-		flex-direction: column;
-		align-items: center;
-	}
-	.client-image, .client-skills {
-		width: 100%;
-		text-align: center;
-		margin: 10px 0;
-		display: flex;
-		justify-content: center;
-	}
-	.client-skills {
-		flex-wrap: wrap;
-	}
-	.skills-header {
-		display: none;
-	}
-}
 	</style>
 
 	<!-- Structured Data -->
@@ -412,7 +383,7 @@ main {
 		"alternateName": "KSM",
 		"url": "https://kindasortamedia.com",
 		"logo": "https://kindasortamedia.com/img/kinda-sorta-media-logo.svg",
-		"description": "Digital consulting agency and incubator specializing in product strategy, development, and marketing.",
+		"description": "Digital consulting agency specializing in product strategy, development, and marketing.",
 		"email": "rexsorgatz@gmail.com",
 		"founder": {
 			"@type": "Person",
@@ -437,7 +408,7 @@ main {
 		</div>
 		<div class="teaser">
 			<p>KSM is a digital consulting agency specializing in product strategy, development, and go-to-market.</p>
-			<p>Our clients include brands seeking strategic guidance in building and launching digital projects. We work with both household media / entertainment brands and early-stage startups.</p>
+			<p>Our clients include brands seeking strategic guidance in building and launching digital projects. We work with both household media & entertainment brands and early-stage startups.</p>
 		</div>
 	</section>
 
