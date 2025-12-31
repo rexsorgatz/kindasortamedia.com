@@ -35,54 +35,18 @@
 	<style>
 :root {
 	--max-width: 960px;
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-gray-light: #dddddd;
+	--color-gray-text: #999999;
 }
 
 /* Gotham Font Faces */
 @font-face {
 	font-family: "Gotham";
-	src: url("fonts/GothamLight.woff2") format("woff2");
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Gotham";
-	src: url("fonts/GothamLightItalic.woff2") format("woff2");
-	font-weight: 300;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Gotham";
 	src: url("fonts/GothamBook.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Gotham";
-	src: url("fonts/GothamBookItalic.woff2") format("woff2");
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Gotham";
-	src: url("fonts/GothamMedium.woff2") format("woff2");
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Gotham";
-	src: url("fonts/GothamMediumItalic.woff2") format("woff2");
-	font-weight: 500;
-	font-style: italic;
 	font-display: swap;
 }
 
@@ -94,29 +58,13 @@
 	font-display: swap;
 }
 
-@font-face {
-	font-family: "Gotham";
-	src: url("fonts/GothamBoldItalic.woff2") format("woff2");
-	font-weight: 700;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Gotham";
-	src: url("fonts/GothamBlack.woff2") format("woff2");
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap;
-}
-
 body {
 	margin: 0 auto;
 	text-align: center;
 	font-family: "Gotham", "Arial Black", Gadget, Arial, Helvetica, sans-serif;
 	font-weight: 400;
 	min-height: 100%;
-	color: #000;
+	color: var(--color-black);
 }
 
 h2 {
@@ -125,7 +73,7 @@ h2 {
 	font-size: 14px;
 	line-height: 30px;
 	text-transform: uppercase;
-	font-weight: normal;
+	font-weight: 400;
 }
 
 p {
@@ -155,7 +103,13 @@ a {
 .site-image {
 	width: 240px;
 	height: 69px;
-	border: 1px solid #dddddd;
+	border: 1px solid var(--color-gray-light);
+	border-radius: 3px;
+	transition: border-color 0.2s ease;
+}
+
+.site-image:hover {
+	border-color: var(--color-black);
 }
 
 #header {
@@ -164,7 +118,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 25px;
-	background-color: #000;
+	background-color: var(--color-black);
 	z-index: 1000;
 	display: flex;
 	justify-content: flex-end;
@@ -172,28 +126,27 @@ a {
 }
 
 #header a {
-	color: #fff;
+	color: var(--color-white);
 	font-size: 10px;
-	font-weight: bold;
+	font-weight: 700;
 	display: flex;
 	align-items: center;
 	padding-right: 15px;
 }
 
-main {
-	padding-top: 25px;
-}
-
 #alpha {
-	width: 960px;
+	max-width: var(--max-width);
+	width: 100%;
 	margin: 0 auto;
-	padding-bottom: 16px;
+	padding: 80px 0 30px 0;
 }
 
 #logo {
 	width: 100%;
 	max-width: var(--max-width);
-	margin: 60px auto 40px;
+	margin: 0 auto 40px;
+	padding: 0 20px;
+	box-sizing: border-box;
 }
 
 #logo img {
@@ -210,6 +163,7 @@ main {
 
 .teaser {
 	text-align: left;
+	padding: 0 20px;
 }
 .teaser p {
 	text-wrap: pretty;
@@ -219,15 +173,16 @@ main {
 }
 
 .content {
-	width: 960px;
-	margin: 0 auto;
+	max-width: var(--max-width);
+	width: 100%;
+	margin: 4px auto 0 auto;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
 }
 
 .clients {
-	padding-top: 20px;
+	padding: 0 0 80px 0;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -262,17 +217,16 @@ main {
 	width: 34px;
 	box-sizing: border-box;
 	margin-left: 4px;
+	border-radius: 3px;
+	background-color: var(--color-black);
+	border: 1px solid var(--color-black);
 }
 
 .empty-tall-box {
-	border: 1px solid #dddddd;
-	background-color: #dddddd;
+	border: 1px solid var(--color-gray-light);
+	background-color: var(--color-gray-light);
 }
 
-.tall-box {
-	background-color: #000000;
-	border: 1px solid #000000;
-}
 /* Piano animation */
 .client-image,
 .tall-box,
@@ -282,31 +236,21 @@ main {
 }
 
 .client.in-view .client-image { opacity: 1; transition-delay: 0ms; }
-.client.in-view .client-skills > :nth-child(1) { opacity: 1; transition-delay: 50ms; }
-.client.in-view .client-skills > :nth-child(2) { opacity: 1; transition-delay: 100ms; }
-.client.in-view .client-skills > :nth-child(3) { opacity: 1; transition-delay: 150ms; }
-.client.in-view .client-skills > :nth-child(4) { opacity: 1; transition-delay: 200ms; }
-.client.in-view .client-skills > :nth-child(5) { opacity: 1; transition-delay: 250ms; }
-.client.in-view .client-skills > :nth-child(6) { opacity: 1; transition-delay: 300ms; }
-.client.in-view .client-skills > :nth-child(7) { opacity: 1; transition-delay: 350ms; }
-.client.in-view .client-skills > :nth-child(8) { opacity: 1; transition-delay: 400ms; }
-.client.in-view .client-skills > :nth-child(9) { opacity: 1; transition-delay: 450ms; }
-.client.in-view .client-skills > :nth-child(10) { opacity: 1; transition-delay: 500ms; }
-.client.in-view .client-skills > :nth-child(11) { opacity: 1; transition-delay: 550ms; }
-.client.in-view .client-skills > :nth-child(12) { opacity: 1; transition-delay: 600ms; }
-.client.in-view .client-skills > :nth-child(13) { opacity: 1; transition-delay: 650ms; }
-.client.in-view .client-skills > :nth-child(14) { opacity: 1; transition-delay: 700ms; }
+.client.in-view .client-skills > * {
+	opacity: 1;
+	transition-delay: calc(var(--i, 0) * 50ms);
+}
 
 #gamma {
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 30px 0;
-	border-top: 3px solid #000;
+	padding: 80px 0;
+	border-top: 1px solid var(--color-gray-light);
 }
 
 #footer p {
 	font-size: 10px;
-	color: #999;
+	color: var(--color-gray-text);
 	margin: 0;
 	padding: 5px;
 }
@@ -316,8 +260,8 @@ main {
 	position: sticky;
 	top: 25px;
 	z-index: 100;
-	background: #fff;
-	border-bottom: 1px solid #dddddd;
+	background: var(--color-white);
+	border-bottom: 1px solid var(--color-gray-light);
 }
 
 .skills-header-inner {
@@ -331,7 +275,7 @@ main {
 .skills-header-spacer {
 	width: 240px;
 	flex-shrink: 0;
-	margin: 0;
+	margin: 0 0 2px 0;
 	font-size: 22px;
 	text-transform: uppercase;
 	text-align: right;
@@ -351,15 +295,15 @@ main {
 	height: 170px;
 	margin: 0;
 	font-size: 15px;
-	font-weight: bold;
+	font-weight: 700;
 	text-transform: uppercase;
 	white-space: nowrap;
 	position: relative;
-	border-left: 1px solid #dddddd;
-	border-right: 1px solid #fff;
+	border-left: 1px solid var(--color-gray-light);
+	border-right: 1px solid var(--color-white);
 }
 .skill-label:last-of-type {
-	border-right: 1px solid #dddddd;
+	border-right: 1px solid var(--color-gray-light);
 	width: 40px;
 }
 .skill-label span {
@@ -370,7 +314,7 @@ main {
 	transform-origin: bottom left;
 	font-weight: 400;
 	letter-spacing: 2px;
-	margin-bottom: 8px;
+	margin-bottom: 10px;
 }
 	</style>
 
@@ -387,8 +331,13 @@ main {
 		"email": "rexsorgatz@gmail.com",
 		"founder": {
 			"@type": "Person",
-			"name": "Rex Sorgatz"
+			"name": "Rex Sorgatz",
+			"url": "https://rexsorgatz.com/"
 		},
+		"sameAs": [
+			"https://www.linkedin.com/company/5076661/",
+			"https://rexsorgatz.com/"
+		],
 		"serviceType": ["Digital Consulting", "Product Strategy", "Product Development", "Marketing", "Research", "Engineering", "Business Development", "Content Development", "Design", "Staffing", "Project Management", "Fundraising", "IT"]
 	}
 	</script>
@@ -1943,6 +1892,10 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.client').forEach(client => {
+	// Assign indices to skill bars for staggered animation
+	client.querySelectorAll('.client-skills > *').forEach((el, i) => {
+		el.style.setProperty('--i', i + 1);
+	});
 	observer.observe(client);
 });
 </script>
