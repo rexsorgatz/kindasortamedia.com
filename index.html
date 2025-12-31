@@ -141,7 +141,6 @@ main {
 
 #beta {
 	background-color: var(--bg-gray);
-	overflow: hidden;
 	padding-bottom: 30px;
 }
 
@@ -258,6 +257,55 @@ main {
 .color-ffffff { background-color: var(--color-project-mgmt); }
 .color-eaa7a2 { background-color: var(--color-it); }
 
+/* Skills Header */
+.skills-header {
+	position: sticky;
+	top: 25px;
+	z-index: 100;
+	background: var(--bg-gray);
+	padding: 15px 0;
+	border-bottom: 3px solid #000;
+}
+
+.skills-header-inner {
+	max-width: var(--max-width);
+	margin: 0 auto;
+}
+
+.skills-header-inner::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.skills-header-labels {
+	width: 520px;
+	margin-left: 10px;
+	float: right;
+	display: flex;
+	align-items: flex-end;
+}
+
+.skill-label {
+	width: 32px;
+	height: 90px;
+	margin-right: 6px;
+	font-size: 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+	white-space: nowrap;
+	position: relative;
+}
+
+.skill-label span {
+	position: absolute;
+	bottom: 0;
+	left: 22px;
+	transform: rotate(-90deg);
+	transform-origin: bottom left;
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 960px) {
 	#alpha, #logo, .content, .skills-grid {
@@ -329,33 +377,25 @@ main {
 
 	<section id="beta">
 		<p>Skills we perform &amp; companies we work with</p>
-		<div class="bottom">
-			<div class="content">
-				<div class="skills-grid">
-					<div class="column">
-						<div class="skill"><div class="color-a60000 small-box" aria-hidden="true"></div><h2 class="label">Research</h2></div>
-						<div class="skill"><div class="color-00d8e6 small-box" aria-hidden="true"></div><h2 class="label">Engineering</h2></div>
-						<div class="skill"><div class="color-000000 small-box" aria-hidden="true"></div><h2 class="label">Business Dev</h2></div>
-					</div>
-					<div class="column">
-						<div class="skill"><div class="color-0060ff small-box" aria-hidden="true"></div><h2 class="label">Strategy</h2></div>
-						<div class="skill"><div class="color-ff7e00 small-box" aria-hidden="true"></div><h2 class="label">Content Dev</h2></div>
-						<div class="skill"><div class="color-edeeb4 small-box" aria-hidden="true"></div><h2 class="label">Marketing</h2></div>
-					</div>
-					<div class="column">
-						<div class="skill"><div class="color-ea00ff small-box" aria-hidden="true"></div><h2 class="label">Product Dev</h2></div>
-						<div class="skill"><div class="color-00ff06 small-box" aria-hidden="true"></div><h2 class="label">Staffing</h2></div>
-						<div class="skill"><div class="color-8f0087 small-box" aria-hidden="true"></div><h2 class="label">Audience Dev</h2></div>
-					</div>
-					<div class="column">
-						<div class="skill"><div class="color-ffea00 small-box" aria-hidden="true"></div><h2 class="label">Design</h2></div>
-						<div class="skill"><div class="color-ffffff small-box" aria-hidden="true"></div><h2 class="label">Project Mgmt</h2></div>
-						<div class="skill"><div class="color-eaa7a2 small-box" aria-hidden="true"></div><h2 class="label">IT</h2></div>
+		<div class="clients">
+			<div class="skills-header">
+				<div class="skills-header-inner">
+					<div class="skills-header-labels">
+						<div class="skill-label"><span>Research</span></div>
+						<div class="skill-label"><span>Strategy</span></div>
+						<div class="skill-label"><span>Product</span></div>
+						<div class="skill-label"><span>Design</span></div>
+						<div class="skill-label"><span>Engineer</span></div>
+						<div class="skill-label"><span>Content</span></div>
+						<div class="skill-label"><span>Staffing</span></div>
+						<div class="skill-label"><span>Project</span></div>
+						<div class="skill-label"><span>Business</span></div>
+						<div class="skill-label"><span>Marketing</span></div>
+						<div class="skill-label"><span>Audience</span></div>
+						<div class="skill-label"><span>IT</span></div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="clients">
 			<div class="content">
 				<article class="client">
 					<div class="client-image"><a target="_blank" href="https://andthen.chat/"><img class="site-image" width="286" height="82" loading="lazy" src="img/logo-andthen.png" alt="AndThen"></a></div>
