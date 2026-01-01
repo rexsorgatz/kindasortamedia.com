@@ -39,6 +39,7 @@
 	--color-white: #ffffff;
 	--color-gray-light: #dddddd;
 	--color-gray-text: #999999;
+	--color-bg: #f5f6fa;
 }
 
 /* Gotham Font Faces */
@@ -135,10 +136,10 @@ a {
 }
 
 #alpha {
-	max-width: var(--max-width);
 	width: 100%;
-	margin: 0 auto;
 	padding: 80px 0 30px 0;
+	background-color: var(--color-bg);
+	border-bottom: 1px solid var(--color-gray-light);
 }
 
 #logo {
@@ -164,6 +165,8 @@ a {
 .teaser {
 	text-align: left;
 	padding: 0 20px;
+	max-width: var(--max-width);
+	margin: 0 auto;
 }
 .teaser p {
 	text-wrap: pretty;
@@ -246,8 +249,21 @@ a {
 	overflow: hidden;
 	padding: 80px 0;
 	border-top: 1px solid var(--color-gray-light);
+	position: relative;
+	height: 70vh;
+	background-color: var(--color-bg);
 }
 
+.floating-cloud {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	will-change: left;
+}
+
+#footer {
+	background-color: var(--color-bg);
+}
 #footer p {
 	font-size: 10px;
 	color: var(--color-gray-text);
@@ -1888,9 +1904,12 @@ a {
 	</section>
 
 	<section id="gamma">
-		<div class="content">
-			<img src="img/cloud.gif" alt="" role="presentation">
-		</div>
+		<img src="img/cloud1.gif" class="floating-cloud" width="612" height="534" alt="" role="presentation">
+		<img src="img/cloud2.gif" class="floating-cloud" width="353" height="307" alt="" role="presentation">
+		<img src="img/cloud3.gif" class="floating-cloud" width="307" height="353" alt="" role="presentation">
+		<img src="img/cloud4.gif" class="floating-cloud" width="209" height="180" alt="" role="presentation">
+		<img src="img/cloud5.gif" class="floating-cloud" width="612" height="534" alt="" role="presentation">
+		<img src="img/cloud6.gif" class="floating-cloud" width="307" height="353" alt="" role="presentation">
 	</section>
 </main>
 
@@ -1929,6 +1948,73 @@ if (sentinel && skillsHeader) {
 	);
 	stickyObserver.observe(sentinel);
 }
+
+// Floating clouds animation
+const clouds = document.querySelectorAll('.floating-cloud');
+
+clouds.forEach(cloud => {
+	const width = cloud.width;
+	let lastTime;
+	let speed;
+
+	function initCloud(startOnScreen = false) {
+		const container = cloud.parentElement;
+		const containerWidth = container.offsetWidth;
+		const containerHeight = container.offsetHeight;
+		const margin = 40;
+
+		// Random settings for each spawn
+		cloud.style.top = (margin + Math.random() * (containerHeight - cloud.height - margin * 2)) + 'px';
+		cloud.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
+		cloud.dataset.direction = Math.random() < 0.5 ? 'right' : 'left';
+		speed = 60 + Math.random() * 120;
+
+		// Position: on screen initially, off screen for respawns
+		if (startOnScreen) {
+			cloud.style.left = (Math.random() * containerWidth) + 'px';
+		} else if (cloud.dataset.direction === 'right') {
+			cloud.style.left = -width + 'px';
+		} else {
+			cloud.style.left = (containerWidth + width) + 'px';
+		}
+
+		lastTime = performance.now();
+		animate();
+	}
+
+	function animate() {
+		const now = performance.now();
+		let delta = (now - lastTime) / 1000;
+		lastTime = now;
+
+		// Cap delta to prevent jumps when tab is backgrounded
+		if (delta > 0.1) delta = 0.016;
+
+		const container = cloud.parentElement;
+		const containerWidth = container.offsetWidth;
+		const currentLeft = parseFloat(cloud.style.left);
+
+		let newLeft;
+		if (cloud.dataset.direction === 'right') {
+			newLeft = currentLeft + speed * delta;
+			if (newLeft > containerWidth) {
+				setTimeout(() => initCloud(false), 1000);
+				return;
+			}
+		} else {
+			newLeft = currentLeft - speed * delta;
+			if (newLeft < -width) {
+				setTimeout(() => initCloud(false), 1000);
+				return;
+			}
+		}
+
+		cloud.style.left = newLeft + 'px';
+		requestAnimationFrame(animate);
+	}
+
+	initCloud(true);
+});
 </script>
 </body>
 </html>
