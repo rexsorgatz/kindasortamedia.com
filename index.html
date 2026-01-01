@@ -264,6 +264,23 @@ a {
 	border-bottom: 1px solid var(--color-gray-light);
 }
 
+/* Mobile browser chrome compensation */
+@supports (-webkit-touch-callout: none) {
+	/* iOS Safari and Chrome on iOS */
+	.skills-header.is-stuck {
+		padding-top: 50px;
+		transition: padding-top 0.15s ease-out;
+	}
+}
+
+@media (hover: none) and (pointer: coarse) {
+	/* Touch devices (Android Chrome, etc.) */
+	.skills-header.is-stuck {
+		padding-top: 50px;
+		transition: padding-top 0.15s ease-out;
+	}
+}
+
 .skills-header-inner {
 	max-width: var(--max-width);
 	margin: 0 auto;
@@ -363,6 +380,7 @@ a {
 
 	<section id="beta">
 		<div class="clients">
+			<div class="skills-header-sentinel" aria-hidden="true"></div>
 			<div class="skills-header">
 				<div class="skills-header-inner">
 					<h2 class="skills-header-spacer">Clients &amp; Skills</h2>
@@ -1898,6 +1916,19 @@ document.querySelectorAll('.client').forEach(client => {
 	});
 	observer.observe(client);
 });
+
+// Sticky header detection for mobile browser chrome compensation
+const sentinel = document.querySelector('.skills-header-sentinel');
+const skillsHeader = document.querySelector('.skills-header');
+if (sentinel && skillsHeader) {
+	const stickyObserver = new IntersectionObserver(
+		([entry]) => {
+			skillsHeader.classList.toggle('is-stuck', !entry.isIntersecting);
+		},
+		{ threshold: 0, rootMargin: '-26px 0px 0px 0px' }
+	);
+	stickyObserver.observe(sentinel);
+}
 </script>
 </body>
 </html>
