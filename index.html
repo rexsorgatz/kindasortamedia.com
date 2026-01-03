@@ -255,6 +255,26 @@ a {
 	background-color: var(--color-bg);
 }
 
+.decorative-boxes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	background-color: var(--color-black);
+	border-bottom: 1px solid var(--color-gray-light);
+}
+
+.decorative-boxes .box {
+	flex: 1;
+	aspect-ratio: 1;
+	border-right: 1px solid var(--color-gray-text);
+}
+
+.decorative-boxes .box:last-child {
+	border-right: none;
+}
+
 .floating-cloud {
 	position: absolute;
 	top: 50%;
@@ -1945,6 +1965,24 @@ a {
 	</section>
 
 	<section id="gamma">
+		<div class="decorative-boxes" role="presentation">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
 		<img src="img/cloud1.gif" class="floating-cloud" width="612" height="534" alt="" role="presentation">
 		<img src="img/cloud2.gif" class="floating-cloud" width="353" height="307" alt="" role="presentation">
 		<img src="img/cloud3.gif" class="floating-cloud" width="307" height="353" alt="" role="presentation">
