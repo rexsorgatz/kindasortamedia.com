@@ -2063,7 +2063,7 @@ clouds.forEach(cloud => {
 		cloud.style.top = (margin + Math.random() * (containerHeight - cloud.height - margin * 2)) + 'px';
 		cloud.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
 		cloud.dataset.direction = Math.random() < 0.5 ? 'right' : 'left';
-		speed = 60 + Math.random() * 120;
+		speed = 60 + Math.random() * 180;
 
 		// Position: on screen initially, off screen for respawns
 		if (startOnScreen) {
