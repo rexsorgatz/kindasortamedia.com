@@ -251,7 +251,7 @@ a {
 	padding: 80px 0;
 	border-top: 1px solid var(--color-gray-light);
 	position: relative;
-	height: 80vh;
+	height: 150vh;
 	background-color: var(--color-bg);
 }
 
@@ -282,6 +282,20 @@ a {
 	transform: translateY(-50%);
 	will-change: left;
 	z-index: 2;
+	cursor: default;
+}
+
+.floating-cloud.spinning {
+	animation: spin3x 1.5s ease-out forwards;
+}
+
+@keyframes spin3x {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(1080deg); }
+}
+
+#cloud-yellow {
+	cursor: pointer;
 }
 
 .gamma-footer {
@@ -1991,9 +2005,10 @@ a {
 		<img src="img/cloud1.gif" class="floating-cloud" width="612" height="534" alt="" role="presentation">
 		<img src="img/cloud2.gif" class="floating-cloud" width="353" height="307" alt="" role="presentation">
 		<img src="img/cloud3.gif" class="floating-cloud" width="307" height="353" alt="" role="presentation">
-		<img src="img/cloud4.gif" class="floating-cloud" width="209" height="180" alt="" role="presentation">
+		<img src="img/cloud4.gif" id="cloud-yellow" class="floating-cloud" width="209" height="180" alt="" role="presentation">
 		<img src="img/cloud5.gif" class="floating-cloud" width="612" height="534" alt="" role="presentation">
 		<img src="img/cloud6.gif" class="floating-cloud" width="307" height="353" alt="" role="presentation">
+		<img src="img/cloud7.gif" class="floating-cloud" width="409" height="471" alt="" role="presentation">
 		<p class="gamma-footer">&copy; Kinda Sorta Media, LLC.</p>
 	</section>
 </main>
@@ -2059,6 +2074,7 @@ clouds.forEach(cloud => {
 			cloud.style.left = (containerWidth + width) + 'px';
 		}
 
+		cloud.style.opacity = '1';
 		lastTime = performance.now();
 		animate();
 	}
@@ -2079,12 +2095,14 @@ clouds.forEach(cloud => {
 		if (cloud.dataset.direction === 'right') {
 			newLeft = currentLeft + speed * delta;
 			if (newLeft > containerWidth) {
+				cloud.style.opacity = '0';
 				setTimeout(() => initCloud(false), 1000);
 				return;
 			}
 		} else {
 			newLeft = currentLeft - speed * delta;
 			if (newLeft < -width) {
+				cloud.style.opacity = '0';
 				setTimeout(() => initCloud(false), 1000);
 				return;
 			}
@@ -2095,6 +2113,14 @@ clouds.forEach(cloud => {
 	}
 
 	initCloud(true);
+});
+
+// Cloud4 spin on click
+document.getElementById('cloud-yellow').addEventListener('click', function() {
+	this.classList.add('spinning');
+	this.addEventListener('animationend', () => {
+		this.classList.remove('spinning');
+	}, { once: true });
 });
 </script>
 </body>
