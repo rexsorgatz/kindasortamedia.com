@@ -14,6 +14,15 @@ This is the portfolio website for Kinda Sorta Media (KSM), a digital consulting 
 - Test by opening index.html in a browser
 - Deploy by pushing to the main branch
 
+## Deployment
+
+Site is hosted on **Cloudflare Pages** with automatic deployments on push to main.
+
+- **Dashboard**: Cloudflare > Developer Platform > Workers & Pages > kindasortamedia-com
+- **Domains**: kindasortamedia.com, kindasortamedia-com.pages.dev
+- Deployments typically complete in ~20 seconds
+- If a deployment fails, retry from the dashboard (usually transient Cloudflare errors)
+
 ## Architecture
 
 ### Page Sections
