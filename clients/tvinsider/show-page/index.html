@@ -13,13 +13,164 @@
             min-height: 100vh;
             background: #f0f0f0;
         }
-        img {
+        .image-container {
+            position: relative;
             width: 1445px;
             height: 2822px;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .hotspot {
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            margin: -10px;
+        }
+        .dot {
+            width: 17px;
+            height: 17px;
+            background: #ff0000;
+            border-radius: 50%;
+            cursor: pointer;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 4px 2px rgba(255, 0, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 12px 6px rgba(255, 0, 0, 0.7);
+            }
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            z-index: 20;
+            top: 50%;
+            left: calc(100% + 12px);
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 280px;
+            width: max-content;
+            white-space: normal;
+            pointer-events: none;
+        }
+        .hotspot:hover {
+            z-index: 100;
+        }
+        .hotspot:hover .tooltip {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <img src="scrubs-show-page.jpg" alt="Scrubs Show Page">
+    <div class="image-container">
+        <img src="scrubs-show-page.jpg" alt="Scrubs Show Page">
+
+        <!-- Premiere Date -->
+        <div class="hotspot" style="left: 61.3%; top: 12.2%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Premiere Date</strong><br>This is manually entered.</div>
+        </div>
+
+        <!-- Networks -->
+        <div class="hotspot" style="left: 69.5%; top: 14.8%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Networks</strong><br>Networks are manually added, as are the links to the pages on their sites.</div>
+        </div>
+
+        <!-- Metadata -->
+        <div class="hotspot" style="left: 72.0%; top: 17.6%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Metadata</strong><br>The genre tags and ratings are pulled in from gracenote. The networks are manually entered. The year is from gracenote, but can be manually overwritten.</div>
+        </div>
+
+        <!-- Lists -->
+        <div class="hotspot" style="left: 58.8%; top: 30.3%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Lists</strong><br>These are editorial content and they appear automatically.</div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="hotspot" style="left: 87.2%; top: 41.4%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Schedule</strong><br>This comes in via gracenote.</div>
+        </div>
+
+        <!-- Episodes -->
+        <div class="hotspot" style="left: 85.9%; top: 33.7%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Episodes</strong><br>This comes in via gracenote.</div>
+        </div>
+
+        <!-- TV Schedule -->
+        <div class="hotspot" style="left: 80.0%; top: 33.7%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>TV Schedule</strong><br>This comes in via gracenote.</div>
+        </div>
+
+        <!-- Streaming -->
+        <div class="hotspot" style="left: 71.4%; top: 33.7%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Streaming</strong><br>The streaming sources come in from JustWatch.</div>
+        </div>
+
+        <!-- Cast & Crew -->
+        <div class="hotspot" style="left: 38.8%; top: 34.1%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Cast &amp; Crew</strong><br>This comes from gracenote.</div>
+        </div>
+
+        <!-- News -->
+        <div class="hotspot" style="left: 56.6%; top: 63.6%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>News</strong><br>This is editorial content for the page.</div>
+        </div>
+
+        <!-- Review -->
+        <div class="hotspot" style="left: 38.7%; top: 56.6%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Review</strong><br>This is editorial content that comes in automatically.</div>
+        </div>
+
+        <!-- Key Art -->
+        <div class="hotspot" style="left: 13.8%; top: 15.5%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Key Art</strong><br>Key art usually starts off coming from TVI editorial. As the show gets closer to premiere, it gets swapped out for Gracenote images.</div>
+        </div>
+
+        <!-- YouTube -->
+        <div class="hotspot" style="left: 63.6%; top: 22.6%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>YouTube</strong><br>The YouTube links are manually entered and the label (type/season) is also added then.</div>
+        </div>
+
+        <!-- Rotten Tomatoes -->
+        <div class="hotspot" style="left: 74.2%; top: 22.6%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>RottenTomatoes</strong><br>The RottenTomatoes IDs are manually entered and the scores are updated on-demand.</div>
+        </div>
+
+        <!-- Awards -->
+        <div class="hotspot" style="left: 79.4%; top: 22.6%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>Awards</strong><br>Awards data comes from Gracenote.</div>
+        </div>
+
+        <!-- IMDB Icon -->
+        <div class="hotspot" style="left: 68.7%; top: 22.6%">
+            <div class="dot"></div>
+            <div class="tooltip"><strong>IMDB</strong><br>The IMDB ID is manually entered. The IMDB Score gets pulled in via the Open Movie Database.</div>
+        </div>
+    </div>
 </body>
 </html>
