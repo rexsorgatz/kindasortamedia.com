@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entertainment - Detroit Free Press</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f6fa;
+    }
+
+    /* Top header bar */
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-top: 3px solid #4f9fd8;
+      min-height: 50px;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-link img {
+      height: 32px;
+      width: auto;
+    }
+
+    .subscribe-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .subscribe-cta a {
+      text-decoration: none;
+      color: #1665cf;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-align: right;
+    }
+
+    .subscribe-cta a span {
+      display: block;
+      font-size: 11px;
+      color: #303030;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    /* Navigation bar */
+    .nav-bar {
+      background: #303030;
+      height: 28px;
+    }
+
+    .nav-bar-inner {
+      display: flex;
+      align-items: center;
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 100%;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+    }
+
+    .nav-links a {
+      pointer-events: auto;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 0 12px;
+      line-height: 28px;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    }
+
+    .nav-links a.active {
+      position: relative;
+    }
+
+    .nav-links a.active::before {
+      content: "[";
+      margin-right: 4px;
+      color: #4f9fd8;
+    }
+
+    .nav-links a.active::after {
+      content: "]";
+      margin-left: 4px;
+      color: #4f9fd8;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-right a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 28px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .nav-right a:hover {
+      opacity: 0.8;
+    }
+
+    .nav-right svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+    }
+
+    .nav-right .weather-temp {
+      font-size: 14px;
+    }
+
+    .btn-subscribe {
+      background: #1665cf;
+      color: #fff !important;
+      font-size: 12px !important;
+      font-weight: 700;
+      padding: 0 8px;
+      line-height: 28px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-signin {
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-signin svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    /* Section nav */
+    .section-nav-wrapper {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .section-nav {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 16px 20px 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-nav h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #303030;
+      margin-right: 8px;
+    }
+
+    .section-nav a {
+      color: #626262;
+      text-decoration: none;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .section-nav a:hover {
+      color: #303030;
+    }
+
+    /* TV Grid iframe */
+    .tv-grid-container {
+      width: 100%;
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    .tv-grid-container iframe {
+      width: 100%;
+      height: calc(100vh - 140px);
+      min-height: 600px;
+      border: none;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links a {
+        font-size: 12px;
+        padding: 0 8px;
+      }
+
+      .nav-links a.hide-mobile {
+        display: none;
+      }
+
+      .subscribe-cta {
+        display: none;
+      }
+
+      .section-nav {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 16px;
+      }
+
+      .section-nav h1 {
+        font-size: 22px;
+        width: 100%;
+      }
+
+      .header-top {
+        padding: 8px 12px;
+      }
+
+      .nav-bar {
+        padding: 0 12px;
+      }
+
+      .tv-grid-container iframe {
+        height: calc(100vh - 120px);
+      }
+    }
+
+    /* Adhesive ad banner */
+    .adhesive-ad {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 8px 0;
+    }
+
+    .adhesive-ad-inner {
+      position: relative;
+      width: 728px;
+      height: 90px;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .adhesive-ad-close {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 24px;
+      height: 24px;
+      background: #303030;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .adhesive-ad-close:hover {
+      background: #000;
+    }
+
+    .adhesive-ad.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <!-- Top bar with logo -->
+    <div class="header-top">
+      <a class="logo-link" href="https://www.freep.com/" aria-label="Detroit Free Press">
+        <img src="logo.svg" alt="Detroit Free Press">
+      </a>
+    </div>
+
+    <!-- Dark navigation bar -->
+    <nav class="nav-bar">
+      <div class="nav-bar-inner">
+      <div class="nav-links">
+        <a href="https://www.freep.com/news/">News</a>
+        <a href="https://www.freep.com/sports/">Sports</a>
+        <a href="https://www.freep.com/autos/">Autos</a>
+        <a href="https://www.freep.com/entertainment/" class="active">Entertainment</a>
+        <a href="https://www.freep.com/real-estate/" class="hide-mobile">Real Estate</a>
+        <a href="https://advertising.usatoday.com/" class="hide-mobile">Advertise</a>
+        <a href="https://www.freep.com/obituaries/" class="hide-mobile">Obituaries</a>
+        <a href="https://user.freep.com/user/enewspaper" class="hide-mobile">eNewspaper</a>
+        <a href="https://www.freep.com/public-notices" class="hide-mobile">Legals</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://www.freep.com/search/" aria-label="Search">
+          <svg viewBox="0 0 24 24"><path d="M15.75 14.33l4.96 4.96-1.42 1.42-4.96-4.96a6.5 6.5 0 1 1 1.41-1.41zM10.5 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z"></path></svg>
+        </a>
+        <a href="https://subscribe.freep.com/" class="btn-subscribe">Subscribe</a>
+        <a href="https://login.freep.com/" class="btn-signin">Sign In
+          <svg viewBox="0 0 10 6"><path d="M5 3.35L8.64 0 10 1.4 5 6 0 1.4 1.36 0z"></path></svg>
+        </a>
+      </div>
+      </div>
+    </nav>
+
+    <!-- Section navigation -->
+    <div class="section-nav-wrapper">
+    <nav class="section-nav">
+      <h1>Entertainment</h1>
+      <a href="https://www.freep.com/entertainment/music/">Music</a>
+      <a href="https://www.freep.com/entertainment/movies/">Movies</a>
+      <a href="https://www.freep.com/entertainment/tv-radio/">TV + Radio</a>
+      <a href="https://www.freep.com/entertainment/restaurant-news-reviews/">Restaurants News + Reviews</a>
+      <a href="https://www.freep.com/entertainment/restaurant-of-the-year/">Restaurant of the Year</a>
+      <a href="#">TV Grids</a>
+    </nav>
+    </div>
+  </header>
+
+  <!-- TV Grid -->
+  <div class="tv-grid-container">
+    <iframe
+      src="https://tvlistings.gracenote.com/grid-affiliates.html?aid=tmsmil"
+      title="TV Listings"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <!-- Adhesive Ad -->
+  <div class="adhesive-ad" id="adhesiveAd">
+    <div class="adhesive-ad-inner">
+      <button class="adhesive-ad-close" onclick="document.getElementById('adhesiveAd').classList.add('hidden')">&times;</button>
+      728x90 Ad
+    </div>
+  </div>
+
+</body>
+</html>
